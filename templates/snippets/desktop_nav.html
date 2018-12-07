@@ -1,0 +1,27 @@
+<ul class="nav navbar-nav">
+
+    {% for link in desktop_links %}
+        <li class='top-level{% if link.links %} dropdown{% endif %}'>
+
+            <a class='top-level' href='{{ link.url }}'>
+                {{ link.title }}
+            </a>
+
+            {% if link.links %}
+                <ul class='dropdown-menu'>
+
+                    {% for s_link in link.links %}
+                        <li class='sub-level'>
+                            <a class='sub-level' href='{{ s_link.url }}'>
+                                {{ s_link.title }}
+                            </a>
+                        </li>
+                    {% endfor %}
+
+                </ul>
+            {% endif %}
+
+        </li>
+    {% endfor %}
+
+</ul>

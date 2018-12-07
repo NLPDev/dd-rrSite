@@ -1,0 +1,10 @@
+MAIL_CHIMP_USERNAME = 'Ryan Hodson'
+MAIL_CHIMP_SECRET_KEY = 'f1740ea3fdfc7a43a5934872fe6cb3bf-us4'
+MAIL_CHIMP_FROM_EMAIL = "info@realclearneighborhoods.com"
+MAIL_CHIMP_LIST_ID = 'd31cc4d8e1'
+
+
+SALESFORCEIQ = {
+    'api_key': '59281da1e4b09b76f3c19ff6',
+    'api_secret': 'aOu58cpBZxOhuzyGMiPlFj8AXox',
+}

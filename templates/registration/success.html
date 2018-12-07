@@ -1,0 +1,28 @@
+{% extends 'portal_base.html' %}
+
+
+{% block content %}
+
+    <form id="success_form" class="form-horizontal" action="{% url 'home' %}" method="post">
+
+        {% csrf_token %}
+
+        {% if event == 'register' %}
+            <h2>Thanks for Signing Up!</h2>
+            <p>Thank you for registering.</p>
+        {% elif event == 'reset-password' %}
+            <h2>Email Sent!</h2>
+            <p>An email has been sent with a link to reset your password.</p>
+        {% else %}
+            <h2>Success!</h2>
+        {% endif %}
+
+        <div class="row">
+            <div class="col-xs-12">
+                <input class="btn btn-primary form-control" type="submit" name="submit" value="Continue">
+            </div>
+        </div>
+
+    </form>
+
+{% endblock %}

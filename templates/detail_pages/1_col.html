@@ -1,0 +1,71 @@
+{% extends 'detail_pages/detail_base.html' %}
+{% load front_tags %}
+
+
+{% block detail-content %}
+
+    <div class='container'>
+
+        <div class='row'>
+
+            <div id='in-page-nav' class='hidden-xs hidden-sm col-md-4'>
+
+                {% block in_page_nav %}{% endblock %}
+
+            </div>
+
+            <div class='hidden-xs hidden-sm col-md-1'></div>
+
+            <div id='section-copy-wrapper' class='col-xs-12 col-sm-12 col-md-7'>
+
+                <div class='row'>
+
+                    <div class='section-copy col-md-12'>
+
+                        {% block detail-content-right %}
+                            {% front_edit 'right-section-copy' page.id %}
+
+                                <h2>Lorem ipsum dolor sit amet nihil amisi</h2>
+
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                                    labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                                    laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                                    voluptate velit esse cillum dolore eu fugiat
+                                </p>
+
+                                <h2>Lorem ipsum dolor sit amet nihil amisi</h2>
+
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                                    labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                                    laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                                    voluptate velit esse cillum dolore eu fugiat
+                                </p>
+
+                            {% end_front_edit %}
+                        {% endblock %}
+
+                        <div class='clearfix'></div>
+
+                        {% ifequal template_add_on 'faq' %}
+                            <div id='template-add-on'>
+
+                                {% include 'snippets/faq_addon.html' %}
+
+                            </div>
+                        {% endifequal %}
+
+                        <div class='clearfix'></div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+{% endblock %}

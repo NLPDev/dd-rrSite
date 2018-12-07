@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block page-title %}Welcome{% endblock %} | Real Clear Neighborhoods</title>
+    <!-- META -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block meta_description %}
+        <meta name="description" content="Millcreek Software Inc.">
+    {% endblock %}
+    <meta name="robots" content="index, follow">
+    <meta name="Revisit-after" content="15 Days">
+    <!-- FAV/SOCIAL ICONS -->
+    <link rel="SHORTCUT ICON" href="/static/images/favicon.ico">
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap-theme.min.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/base.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/portal.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/front_overrides.css">
+    <!-- FONTS -->
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Merriweather:400,400italic' rel='stylesheet' type='text/css'>
+    <!-- SCRIPTS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/js/menu.js"></script>
+    <script type="text/javascript" src="/static/js/user_actions.js"></script>
+    <script type="text/javascript" src="/static/js/ckeditor/ckeditor.js"></script>
+
+    <link type="text/css" rel="stylesheet" href="/static/css/detail.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/chosen.min.css">
+    <script type="text/javascript" src="/static/js/chosen.jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('select').chosen({enable_split_word_search: true, search_contains: true});
+        });
+    </script>
+
+    {% block extra-head %} {% endblock %}
+</head>
+
+<body {% block body-id %}{% endblock %} class="portal-body">
+
+<!-- HEADER -->
+<div id="portal-header-wrapper" class="wrapper">
+    <img id="main-banner" src="/static/images/portal_main_image.jpg" />
+</div>
+<!-- END HEADER -->
+
+<!-- CONTENT -->
+<div id="portal-content-wrapper" class="wrapper">
+    <div id="portal-content-inner">
+        {% block content %} {% endblock %}
+    </div>
+</div>
+<!-- END CONTENT -->
+
+<!-- individual scripts for page -->
+{% block page_js %} {% endblock page_js %}
+
+</body>
+
+</html>

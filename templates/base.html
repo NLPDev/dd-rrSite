@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+{% load front_tags %}
+
+<html>
+
+<head>
+
+    <title>{% block page-title %}Welcome{% endblock %} | Real Clear Neighborhoods</title>
+
+    <!-- META -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block meta_description %}
+        <meta name="description" content="Real Clear Neighborhoods">
+    {% endblock %}
+    <meta name="robots" content="index, follow">
+    <meta name="Revisit-after" content="15 Days">
+
+    <!-- FAV/SOCIAL ICONS -->
+    <link rel="SHORTCUT ICON" href="/static/images/favicon.ico">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css" />
+    <link type="text/css" rel="stylesheet" href="/static/css/base.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/nav.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/widgets.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/front_overrides.css">
+
+    <!-- FONTS -->
+    <link href="http://fonts.googleapis.com/css?family=Raleway:400,300|Merriweather:400,300,300italic" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+
+    <!-- SCRIPTS -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular-route.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular-cookies.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+    <script src="/static/js/ui-bootstrap-modal-tpls-0.12.0.min.js"></script>
+    <script type="text/javascript" src="/static/js/menu.js"></script>
+    <script type="text/javascript" src="/static/js/user_actions.js"></script>
+    <script type="text/javascript" src="/static/js/ckeditor/ckeditor.js"></script>
+    <script type="text/javascript" src="/static/angular/app.js"></script>
+    <script type="text/javascript" src="/static/angular/controllers.js"></script>
+
+    {% if active_user and active_user.is_staff %}
+        {% front_edit_scripts editor='ckeditor' %}
+    {% endif %}
+
+    {% block extra-head %}
+
+    {% endblock %}
+
+</head>
+
+<body {% block body-id %}{% endblock %}>
+
+<!-- HEADER -->
+<div id="topper-wrapper" class="topbar wrapper">
+
+    <div id="topper" class="container">
+
+        {% ifequal request.session.must_be_true_to_yourself False %}
+            <div class="col-sm-2">
+                <a href="{% url 'super_su' %}">Release User Account</a>
+            </div>
+        {% endifequal %}
+
+        {% if active_user %}
+            <div id="active_user_wrapper">
+                <a href="/account/">
+                    {{ active_user.first_name }} {{ active_user.last_name }}
+                </a>
+            </div>
+        {% endif %}
+
+        {% include 'snippets/topper_nav.html' %}
+
+    </div>
+
+</div>
+<div id="header-wrapper" class="navbar wrapper" role="navigation">
+    <div id="header" class="container">
+        {% if logo %}
+            <a id="logo" href="/">
+                <img src="{{ logo.image }}" alt="{{ logo.alt_text }}">
+            </a>
+        {% endif %}
+        {% include 'snippets/desktop_nav.html' %}
+        {% include 'snippets/mobile_nav.html' %}
+        <div class="hamburger" onclick="toggleMobileMenu();">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+</div>
+<!-- END HEADER -->
+
+<!-- CONTENT -->
+<div id="content-wrapper" class="wrapper">
+    {% block content %} {% endblock %}
+</div>
+<!-- END CONTENT -->
+
+<!-- FOOTER -->
+{% if footer %}
+    <div id="footer-wrapper" class="wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="left-col hidden-xs col-sm-7 col-md-7 col-lg-7">
+                    <div class="left-col-copy">
+                        {% front_edit "left-col-footer" footer.id %}
+                            <h2>Millcreek Template Project</h2>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                                ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
+                                eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+                                mollit anim id est laborum.
+                            </p>
+                        {% end_front_edit %}
+                    </div>
+
+                    <div class="social-icons">
+                        {% for item in footer.social_links %}
+                            <a href="{{ item.link }}" target="_blank">
+                                <img src="{{ item.image }}">
+                            </a>
+                        {% endfor %}
+                    </div>
+
+                    <div class="clear-both"></div>
+
+                    <div class="doc4-copyright">
+                        <a href="http://www.doc4design.com" target="_blank">Arkansas design</a>
+                    </div>
+
+                    <div class="copyright">
+                        {% front_edit "footer-copyright" footer.id %}
+                            <div>
+                                &copy;2015 Millcreek Software • All Right Reserved • <a href="http://www.doc4design.com">Arkansas design</a>
+                            </div>
+                        {% end_front_edit %}
+                    </div>
+                </div>
+
+                <div class="hidden-xs hidden-sm col-md-1 col-lg-1"></div>
+
+                <div class="right-col col-xs-12 col-sm-5 col-md-4 col-lg-4">
+                    <div class="right-col-copy">
+                        {% front_edit "right-col-footer" footer.id %}
+                            <h2>Get in Touch</h2>
+                            <ul>
+                                <li>Address Line 1</li>
+                                <li>City, State Zip</li>
+                                <li>Office: 123-456-7890</li>
+                            </ul>
+                            <p><a href="mailto:test@email.com">test@email.com</a></p>
+                        {% end_front_edit %}
+                    </div>
+
+                    <div class="clear-both"></div>
+
+                    <div class="copyright visible-xs" style="margin-top: 40px;">
+                        {% front_edit "footer-copyright" footer.id %}
+                            <div>
+                                &copy;2015 Millcreek Software • All Right Reserved • <a href="http://www.doc4design.com">Arkansas design</a>
+                            </div>
+                        {% end_front_edit %}
+                        <div class="doc4-copyright">
+                            <a href="http://www.doc4design.com" target="_blank">Arkansas design</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endif %}
+<!-- END FOOTER -->
+
+<!-- USER ACTIONS -->
+{% if active_user and active_user.is_staff %}
+    <div id='user-actions-wrapper' class='wrapper'>
+        <div id='ellipsis' onclick='toggleUserActions()'>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <div class="community_switching">
+            Community: {{ active_user.neighbor.community }}
+        </div>
+
+        <div class='user-actions'>
+            <span class='left'>
+                Welcome back, <a href='/admin/'>{{ active_user.username }}</a>
+            </span>
+            <span class='left logout'>
+                <a href='/admin/logout/'>logout</a>
+            </span>
+        </div>
+
+        <div class='more-actions'>
+            <span class='left'>
+                <a onclick='displayManageWindow("/admin/navigation/primarynavigation/")'>navigation</a>
+            </span>
+            <span class='left break'>
+                <a onclick='displayManageWindow("/admin/page_content/webpage/")'>pages</a>
+            </span>
+            {% block user-actions %}{% endblock %}
+        </div>
+
+    </div>
+
+    <div id='user-manage-wrapper'>
+        <div id='mask' onclick='hideManageWindow()'></div>
+        <div id='user-manage-dialog'>
+            <div id='user-manage-content'></div>
+            <div class='clear-both'></div>
+            <div id='user-manage-buttons'>
+                <span class='btn left' onclick='hideManageWindow()'>Close</span>
+                <span class='btn left' onclick='saveManageWindow()'>Refresh Page</span>
+            </div>
+        </div>
+    </div>
+{% endif %}
+<!-- END USER ACTIONS -->
+
+</body>
+
+</html>

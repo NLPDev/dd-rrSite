@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html style="margin: 0;padding: 0;">
+<head style="margin: 0;padding: 0;">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" style="margin: 0;padding: 0;">
+
+    <title style="margin: 0;padding: 0;">Real Clear Communities Admin Notification</title>
+
+    <style type="text/css">
+        @import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
+        @import url(http://fonts.googleapis.com/css?family=Merriweather:400);
+    </style>
+
+</head>
+<body leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" offset="0"
+      style="margin: 0;padding: 0;-webkit-text-size-adjust: none;font-family: 'Merriweather',Helvetica,Arial,sans-serif;font-size: 12px;background-color: #FFFFFF;width: 100%;">
+<center style="margin: 0;padding: 0;">
+    <table border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="backgroundTable"
+           style="margin: 0;padding: 0;border: none;background-color: #FFFFFF;height: 100%;width: 100%;">
+        <tr style="margin: 0;padding: 0;">
+            <td align="center" valign="top" style="margin: 0;padding: 0;">
+
+                <table class="header" style="font-family: 'Montserrat',Helvetica,Arial,sans-serif;font-weight: 200;font-size: 22px;color: #FFFFFF;margin: 0;padding: 0;border: 0;width: 100%;background: #7e9dbc;">
+
+                    <tr style="margin: 0;padding: 0;">
+
+                        <td style="text-align: left;margin: 0;padding: 10px;">
+
+                            <a href="{{ request.get_host }}{% url 'login' %}" style="color:#FFFFFF;text-decoration: none;font-weight:700;">Real Clear Communities</a>
+
+                        </td>
+
+                    </tr>
+
+                </table>
+
+                <table class="section" style="margin: 0;padding: 0;border: 0;width: 100%;color: #8d8e92;background: #FFFFFF;">
+                    <tr style="margin: 0;padding: 0;">
+                        <td class="sectionTD" style="margin: 0;padding: 20px 20px;text-align: left;">
+
+                            <p style="margin: 0 0 20px 0;padding: 0;color: #8d8e92;font-family: 'Merriweather',Helvetica,Arial,sans-serif;font-weight: 400;font-size: 16px;">
+                                {{ message }}
+                            </p>
+
+                            {% if url %}
+                            <p style="margin: 0 0 20px 0;padding: 0;color: #8d8e92;font-family: 'Merriweather',Helvetica,Arial,sans-serif;font-weight: 400;font-size: 16px;">
+                                <a href="{{ url }}" target="_blank" style="color:#a5d1fe;text-decoration: none;">You can review this here.</a>
+                            </p>
+                            {% endif %}
+
+                        </td>
+
+                    </tr>
+                </table>
+
+            </td>
+        </tr>
+    </table>
+</center>
+</body>
+</html>

@@ -1,0 +1,77 @@
+{% extends 'detail_pages/detail_base.html' %}
+{% load front_tags %}
+
+
+{% if member.meta_title %}
+    {% block page-title %}{{ member.meta_title }}{% endblock %}
+{% endif %}
+
+
+{% if member.meta_description %}
+    {% block meta_description %}
+        <meta name='description' content='{{ member.meta_description }}'>
+    {% endblock %}
+{% endif %}
+
+
+{% block detail-content %}
+
+    <div class='container'>
+
+        <div class='row'>
+
+            <div class='col-xs-12 col-sm-5 col-md-4'>
+
+                <img class='member-image' src='{{ member.image }}'>
+
+                <div class='social-icons'>
+
+                    {% for item in member.social_links %}
+                        <a href='{{ item.link }}' target='_blank'>
+                            <img src='{{ item.image }}'>
+                        </a>
+                    {% endfor %}
+
+                </div>
+
+            </div>
+
+            <div class='hidden-xs hidden-sm col-md-1'></div>
+
+            <div id='section-copy-wrapper' class='col-xs-12 col-sm-7 col-md-7'>
+
+                <div class='row'>
+
+                    <div class='section-copy col-md-12'>
+
+                        <h2 class='member-name'>{{ member.name }}</h2>
+                        <p class='position'>{{ member.position }}</p>
+
+                        {% autoescape off %}
+                        {{ member.bio }}
+                        {% endautoescape %}
+
+                        <div class='clearfix'></div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+{% endblock %}
+
+
+{% block user-actions %}
+
+    {{ block.super }}
+
+    <span class='left'>
+        <a onclick='displayManageWindow("/admin/staff/member/{{ member.id }}/")'>edit member</a>
+    </span>
+
+{% endblock %}

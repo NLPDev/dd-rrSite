@@ -1,0 +1,15 @@
+celery==3.1.25
+Django==1.7.4
+easy-thumbnails==2.2
+gspread==0.6.2
+mailchimp3==2.0.11
+oauth2client==4.1.0
+Pillow==2.7.0
+psycopg2
+pytz==2014.10
+redis==2.10.5
+requests==2.5.1
+six==1.9.0
+stripe==1.20.2
+wsgiref==0.1.2
+

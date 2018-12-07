@@ -1,0 +1,43 @@
+{% extends 'portal_base.html' %}
+
+
+{% block content %}
+
+    <form id="registration_form" class="form-horizontal" action="{% url 'register' %}" method="post">
+
+        {% csrf_token %}
+
+        {% if choose_community_form.non_field_errors %}
+            <div class="row">
+                <div id="non_field_errors" class="col-xs-12">
+                    {{ choose_community_form.non_field_errors }}
+                </div>
+            </div>
+        {% endif %}
+
+        <div class="row">
+            <div class="col-xs-12">
+                {{ choose_community_form.position.label_tag }}
+                <span class="helptext">{{ choose_community_form.position.help_text }}</span>
+                <span class="field_error">{% for error in choose_community_form.position.errors %}* {{ error }} {% endfor %}</span>
+                {{ choose_community_form.position }}
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12">
+                {{ choose_community_form.community.label_tag }}
+                <span class="field_error">{% for error in choose_community_form.community.errors %}* {{ error }} {% endfor %}</span>
+                {{ choose_community_form.community }}
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12">
+                <input class="btn btn-primary form-control" type="submit" name="submit" value="Submit">
+            </div>
+        </div>
+
+    </form>
+
+{% endblock %}

@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% load front_tags %}
+
+{% block page-title %}
+    {% if page.meta_title %}{{ page.meta_title }}{% else %}{{ page.label }}{% endif %}
+{% endblock %}
+
+{% if page.meta_description %}
+    {% block meta_description %}
+        <meta name='description' content='{{ page.meta_description }}'>
+    {% endblock %}
+{% endif %}
+
+{% block extra-head %}
+    {{ block.super }}
+    <link type='text/css' rel='stylesheet' href='/static/css/detail.css'>
+    <link type='text/css' rel='stylesheet' href='/static/css/chosen.min.css'>
+    <script type='text/javascript' src="/static/js/chosen.jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('select').chosen({enable_split_word_search: true, search_contains: true});
+        });
+    </script>
+    {% front_edit_scripts editor='ckeditor' %}
+{% endblock extra-head %}
+
+{% block content %}
+    <div id='cover-image' class='wrapper' style='background-image: url("{{ page.image_cover }}")'>
+        {% include 'snippets/cover_image_content.html' %}
+    </div>
+    {% if messages %}
+        <div id="glob-messages">
+            {% for message in messages %}
+                <div class="row">
+                    <div  class="glob-message {% if message.tags %}{{ message.tags }}{% endif %} col-xs-12">
+                        {{ message }}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+    <div id='sections' class='content-gutter wrapper'>
+        {% block detail-content %}{% endblock %}
+        {% ifequal template_add_on 'staff' %}
+            <div id='template-add-on'>
+                {% include 'snippets/staff_addon.html' %}
+            </div>
+        {% endifequal %}
+    </div>
+{% endblock content %}
+
+{% if active_user %}
+    {% block user-actions %}
+        <span class='left'>
+            {% if page.id > 0 %}
+                <a onclick='displayManageWindow("/admin/page_content/webpage/{{ page.id }}/")'>edit page</a>
+            {% else %}
+                <a onclick='displayManageWindow("/admin/page_content/webpage/add/?label={{ page.label }}&community={{ page.community }}&slug={{ page.slug }}")'>edit page</a>
+            {% endif %}
+        </span>
+        {% ifequal template_add_on 'staff' %}
+            <span class='left'>
+                <a onclick='displayManageWindow("/admin/staff/member/")'>staff members</a>
+            </span>
+        {% endifequal %}
+        {% ifequal template_add_on 'faq' %}
+            <span class='left'>
+                <a onclick='displayManageWindow("/admin/page_content/faq/")'>faqs</a>
+            </span>
+        {% endifequal %}
+    {% endblock user-actions %}
+{% endif %}

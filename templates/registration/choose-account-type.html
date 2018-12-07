@@ -1,0 +1,26 @@
+{% extends "portal_base.html" %}
+
+{% block content %}
+    <p>What type of account are you signing up for?</p>
+    <form action="" method="post" class="form-horizontal" id="account-type-form">
+        {% csrf_token %}
+        {% for radio in form.account_type %}
+        <div class="row">
+            <div class="col-xs-12">
+                <label class="fake-checkbox-wrapper">
+                    {{ radio.tag }}
+                    <span class="fake-checkbox-checked">&#9745;</span> 
+                    <span class="fake-checkbox-unchecked">&#9744;</span> 
+                    <span>{{ radio.choice_label }}</span>
+                </label-->
+            </div>
+        </div>
+        {% endfor %}
+
+        <div class="row">
+            <div class="col-xs-12">
+                <input class="btn btn-primary form-control" type="submit" value="submit">
+            </div>
+        </div>
+    </form>
+{% endblock content %}

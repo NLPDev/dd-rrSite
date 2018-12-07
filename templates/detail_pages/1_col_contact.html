@@ -1,0 +1,138 @@
+{% extends 'detail_pages/detail_base.html' %}
+{% load front_tags %}
+
+
+{% block extra-head %}
+
+    {{ block.super }}
+
+    <script type='text/javascript' src='/static/js/success.js'></script>
+    <script type='text/javascript'>
+
+        $(document).ready(function () {
+
+            var frm = $('#contact-form');
+            $(frm).submit(function (event) {
+                $.ajax({
+                    type: frm.attr('method'),
+                    url: '/api/contact-form',
+                    data: frm.serialize(),
+                    success: function (data) {
+                        submitContactFormSuccess(data)
+                    },
+                    error: function (data) {
+                        ajaxError()
+                    }
+                });
+                event.preventDefault();
+            });
+
+        });
+
+        function submitContactFormSuccess(data) {
+            var error = data['error_message'];
+            var newFormHTML = data['form_html'];
+
+            if (newFormHTML) {
+                $('#small-contact-form-wrapper').html(newFormHTML);
+            }
+
+            if (error) {
+                // DO NOT DISPLAY SUCCESS
+            }
+
+            else {
+                displaySuccess()
+            }
+        }
+
+    </script>
+
+{% endblock %}
+
+
+{% block detail-content %}
+
+    <div class='container'>
+
+        <div class='row'>
+
+            <div id='small-contact-form-wrapper' class='col-xs-12 col-sm-12 col-md-4'>
+
+                {% include 'snippets/small_contact_form.html' %}
+
+            </div>
+
+            <div class='hidden-xs hidden-sm col-md-1'></div>
+
+            <div id='section-copy-wrapper' class='col-xs-12 col-sm-12 col-md-7'>
+
+                <div class='row'>
+
+                    <div class='section-copy col-md-12'>
+
+                        {% front_edit 'right-section-copy' page.id %}
+
+                            <h2>Lorem ipsum dolor sit amet nihil amisi</h2>
+
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                                laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                                voluptate velit esse cillum dolore eu fugiat
+                            </p>
+
+                            <h2>Lorem ipsum dolor sit amet nihil amisi</h2>
+
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                                laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                                voluptate velit esse cillum dolore eu fugiat
+                            </p>
+
+                        {% end_front_edit %}
+
+                        <div class='clearfix'></div>
+
+                        {% ifequal template_add_on 'faq' %}
+                            <div id='template-add-on'>
+
+                                {% include 'snippets/faq_addon.html' %}
+
+                            </div>
+                        {% endifequal %}
+
+                        <div class='clearfix'></div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+{% endblock %}
+
+
+{% block user-actions %}
+
+    {{ block.super }}
+
+    <span class='left'>
+        <a onclick='displaySuccess();'>edit success message</a>
+    </span>
+
+{% endblock %}
+
+
+{% block extra-content %}
+
+    <div id='dialog-placeholder'>
+        {% include 'snippets/success_dialog.html' %}
+    </div>
+
+{% endblock %}

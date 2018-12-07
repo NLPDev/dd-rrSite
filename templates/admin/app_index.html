@@ -1,0 +1,82 @@
+{% extends "admin/index.html" %}
+{% load i18n %}
+{% load url from future %}
+
+{% block bodyclass %}app-index{% endblock %}
+
+{% block dashboard-content %}{% endblock %}
+
+{% if not is_popup %}
+    {% block breadcrumbs %}
+
+{#        <ul class="breadcrumb">#}
+{##}
+{#            {% for app in app_list %}#}
+{#                <li class="active">#}
+{#                    Applications#}
+{#                </li>#}
+{#            {% endfor %}#}
+{##}
+{#        </ul>#}
+
+    {% endblock %}
+{% endif %}
+
+{% block content %}
+
+    <div id="content-main">
+
+        {% if app_list %}
+
+            {% for app in app_list %}
+                <div{{ app.is_active|yesno:' class=active,' }}>
+
+                    <div class="module">
+
+                        <table class="table-overview applist"
+                               summary="{% blocktrans with name=app.name %}Models available in the {{ name }} application.{% endblocktrans %}">
+
+                            <caption><a href="{{ app.app_url }}" class="section">{% trans app.name %}</a></caption>
+
+                            {% for model in app.models %}
+                                <tr>
+                                    <th scope="row">{{ model.name }}</th>
+                                    {% if model.admin_url %}
+                                        <td>
+                                            <a href="{{ model.admin_url }}" class="changelink icon">
+                                                <i class="icon-eye-open icon-alpha75"></i>{% trans 'View' %}
+                                            </a>
+                                        </td>
+                                    {% else %}
+                                        <td>&nbsp;</td>
+                                    {% endif %}
+
+                                    {% if model.add_url %}
+                                        <td>
+                                            <a href="{{ model.add_url }}" class="addlink icon">
+                                                <i class="icon-plus-sign icon-alpha75"></i>{% trans 'Add' %}
+                                            </a>
+                                        </td>
+                                    {% else %}
+                                        <td>&nbsp;</td>
+                                    {% endif %}
+                                </tr>
+                            {% endfor %}
+
+                        </table>
+
+                    </div>
+
+                </div>
+            {% endfor %}
+
+        {% else %}
+
+            <p>{% trans "You don't have permission to edit anything." %}</p>
+
+        {% endif %}
+    </div>
+
+{% endblock %}
+
+{% block sidebar %}{% endblock %}

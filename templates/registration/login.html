@@ -1,0 +1,55 @@
+{% extends 'portal_base.html' %}
+
+
+{% block content %}
+
+
+    <form id="login_form" class="form-horizontal" action="{% url 'login' %}" method="post">
+
+        {% csrf_token %}
+
+        {% if login_form.non_field_errors %}
+            <div class="row">
+                <div id="non_field_errors" class="col-xs-12">
+                    {{ login_form.non_field_errors }}
+                </div>
+            </div>
+        {% endif %}
+
+        {% for field in login_form %}
+            <div class="row">
+                <div class="col-xs-12">
+                {% if field.name == 'remember_me' %}
+                    {{ field }}
+                    {{ field.label_tag }}
+                    <span class="field_error">{% for error in field.errors %}* {{ error }} {% endfor %}</span>
+
+                    <div id="forgot-password-link">
+                        <a href="{% url 'forgot-password' %}">Forgot Password?</a>
+                    </div>
+                {% else %}
+                    {{ field.label_tag }}
+                    <span class="field_error">{% for error in field.errors %}* {{ error }} {% endfor %}</span>
+                    {{ field }}
+                {% endif %}
+                </div>
+            </div>
+        {% endfor %}
+
+            <div class="row">
+                <div class="col-xs-12">
+                    <input class="btn btn-primary form-control" type="submit" name="submit" value="Login">
+                </div>
+            </div>
+
+    </form>
+
+    <div class="row">
+        <div class="col-xs-12">
+            <p>
+                Not a member yet? <a href="{% url 'choose-account-type' %}">Sign Up</a>
+            </p>
+        </div>
+    </div>
+
+{% endblock %}

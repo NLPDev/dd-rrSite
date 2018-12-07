@@ -1,0 +1,241 @@
+{% extends 'portal_base.html' %}
+{% load register_add_class %}
+
+{% block content %}
+    <form id="registration_form" class="form-horizontal" action="{% url 'register' %}" method="post">
+        {% csrf_token %}
+        <h4>{{ account_type_title }}</h4>
+        <p>
+            <a href="{% url 'choose-account-type' %}">
+                <span class="heavy-left-arrow">&#10137;</span>
+                <span>Choose Another Account Type</span>
+            </a>
+        </p>
+
+        {{ register_form.account_type }}
+
+        {% if register_form.non_field_errors %}
+            <div class="row">
+                <div id="non_field_errors" class="col-xs-12">
+                    {{ register_form.non_field_errors }}
+                </div>
+            </div>
+        {% endif %}
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-6">
+                <label for="{{ register_form.first_name.id_for_label }}">
+                    {{ register_form.first_name.label }} <span class="require-asterisk">*</span>
+                    <span class="field_error">{% for error in register_form.first_name.errors %} {{ error }} {% endfor %}</span>
+                </label>
+                {% if register_form.first_name.errors %}{{ register_form.first_name | add_class:'error' }}{% else %}{{ register_form.first_name }}{% endif %}
+            </div>
+            <div class="col-xs-12 col-sm-6">
+                <label for="{{ register_form.last_name.id_for_label }}">
+                    {{ register_form.last_name.label }} <span class="require-asterisk">*</span>
+                    <span class="field_error">{% for error in register_form.last_name.errors %} {{ error }} {% endfor %}</span>
+                </label>
+                {% if register_form.last_name.errors %}{{ register_form.last_name | add_class:'error' }}{% else %}{{ register_form.last_name }}{% endif %}
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12">
+                <label for="{{ register_form.company_name.id_for_label }}">
+                    {{ register_form.company_name.label }}
+                    <span class="field_error">{% for error in register_form.company_name.errors %} {{ error }} {% endfor %}</span>
+                </label>
+                {% if register_form.company_name.errors %}{{ register_form.company_name | add_class:'error' }}{% else %}{{ register_form.company_name }}{% endif %}
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-6">
+                <label for="{{ register_form.phone.id_for_label }}">
+                    {{ register_form.phone.label }} <span class="require-asterisk">*</span>
+                    <span class="field_error">{% for error in register_form.phone.errors %} {{ error }} {% endfor %}</span>
+                </label>
+                {% if register_form.phone.errors %}{{ register_form.phone | add_class:'error' }}{% else %}{{ register_form.phone }}{% endif %}
+            </div>
+            <div class="col-xs-12 col-sm-6">
+                <label for="{{ register_form.email.id_for_label }}">
+                    {{ register_form.email.label }} <span class="require-asterisk">*</span>
+                    <span class="field_error">{% for error in register_form.email.errors %} {{ error }} {% endfor %}</span>
+                </label>
+                {% if register_form.email.errors %}{{ register_form.email | add_class:'error' }}{% else %}{{ register_form.email }}{% endif %}
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-6">
+                <label for="{{ register_form.password.id_for_label }}">
+                    {{ register_form.password.label }} <span class="require-asterisk">*</span>
+                    <span class="field_error">{% for error in register_form.password.errors %} {{ error }} {% endfor %}</span>
+                </label>
+                {% if register_form.password.errors %}{{ register_form.password | add_class:'error' }}{% else %}{{ register_form.password }}{% endif %}
+            </div>
+            <div class="col-xs-12 col-sm-6">
+                <label for="{{ register_form.password_verify.id_for_label }}">
+                    {{ register_form.password_verify.label }} <span class="require-asterisk">*</span>
+                    <span class="field_error">{% for error in register_form.password_verify.errors %} {{ error }} {% endfor %}</span>
+                </label>
+                {% if register_form.password_verify.errors %}{{ register_form.password_verify | add_class:'error' }}{% else %}{{ register_form.password_verify }}{% endif %}
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12">
+                <label for="{{ register_form.address_1.id_for_label }}">
+                    {{ register_form.billing_address_1.label }} <span class="require-asterisk">*</span>
+                    <span class="field_error">{% for error in register_form.billing_address_1.errors %} {{ error }} {% endfor %}</span>
+                </label>
+                {% if register_form.billing_address_1.errors %}{{ register_form.billing_address_1 | add_class:'error' }}{% else %}{{ register_form.billing_address_1 }}{% endif %}
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12">
+                {{ register_form.billing_address_2.label_tag }}
+                <span class="field_error">{% for error in register_form.billing_address_2.errors %} {{ error }} {% endfor %}</span>
+                {% if register_form.billing_address_2.errors %}{{ register_form.billing_address_2 | add_class:'error' }}{% else %}{{ register_form.billing_address_2 }}{% endif %}
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-5">
+                <label for="{{ register_form.billing_city.id_for_label }}">
+                    {{ register_form.billing_city.label }} <span class="require-asterisk">*</span>
+                    <span class="field_error">{% for error in register_form.billing_city.errors %} {{ error }} {% endfor %}</span>
+                </label>
+                {% if register_form.billing_city.errors %}{{ register_form.billing_city | add_class:'error' }}{% else %}{{ register_form.billing_city }}{% endif %}
+            </div>
+
+            <div class="col-xs-12 col-sm-3 mb-20">
+                <label for="{{ register_form.billing_state.id_for_label }}">
+                    {{ register_form.billing_state.label }} <span class="require-asterisk">*</span>
+                    <span class="field_error">{% for error in register_form.billing_state.errors %} {{ error }} {% endfor %}</span>
+                </label>
+                {% if register_form.billing_state.errors %}{{ register_form.billing_state | add_class:'error' }}{% else %}{{ register_form.billing_state }}{% endif %}
+            </div>
+
+            <div class="col-xs-12 col-sm-4">
+                <label for="{{ register_form.zip_code.id_for_label }}">
+                    {{ register_form.billing_zip_code.label }} <span class="require-asterisk">*</span>
+                    <span class="field_error">{% for error in register_form.billing_zip_code.errors %} {{ error }} {% endfor %}</span>
+                </label>
+                {% if register_form.billing_zip_code.errors %}{{ register_form.billing_zip_code | add_class:'error' }}{% else %}{{ register_form.billing_zip_code }}{% endif %}
+            </div>
+        </div>
+
+        <!-- MAILING FORM START -->
+        <div class="row">
+            <div class="col-xs-12">
+                {{ register_form.mailing_address_differ }}
+                {{ register_form.mailing_address_differ.label_tag | add_class:'chbx-label' }}
+            </div>
+        </div>
+        
+        <div id="mailing-form" class="mb-20">
+            {% if mailing_form.non_field_errors %}
+                <div class="row">
+                    <div id="non_field_errors" class="col-xs-12">
+                        {{ mailing_form.non_field_errors }}
+                    </div>
+                </div>
+            {% endif %}
+
+            <div class="row">
+                <div class="col-xs-12">
+                    <label for="{{ mailing_form.address_1.id_for_label }}">
+                        {{ mailing_form.address_1.label }} <span class="require-asterisk">*</span>
+                        <span class="field_error">{% for error in mailing_form.address_1.errors %} {{ error }} {% endfor %}</span>
+                    </label>
+                    {% if mailing_form.address_1.errors %}{{ mailing_form.address_1 | add_class:'error' }}{% else %}{{ mailing_form.address_1 }}{% endif %}
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12">
+                    {{ mailing_form.address_2.label_tag }}
+                    <span class="field_error">{% for error in mailing_form.address_2.errors %} {{ error }} {% endfor %}</span>
+                    {% if mailing_form.address_2.errors %}{{ mailing_form.address_2 | add_class:'error' }}{% else %}{{ mailing_form.address_2 }}{% endif %}
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-5">
+                    <label for="{{ mailing_form.city.id_for_label }}">
+                        {{ mailing_form.city.label }} <span class="require-asterisk">*</span>
+                        <span class="field_error">{% for error in mailing_form.city.errors %} {{ error }} {% endfor %}</span>
+                    </label>
+                    {% if mailing_form.city.errors %}{{ mailing_form.city | add_class:'error' }}{% else %}{{ mailing_form.city }}{% endif %}
+                </div>
+                <div class="col-xs-12 col-sm-3 mb-20">
+                    <label for="{{ mailing_form.state.id_for_label }}">
+                        {{ mailing_form.state.label }} <span class="require-asterisk">*</span>
+                        <span class="field_error">{% for error in mailing_form.state.errors %} {{ error }} {% endfor %}</span>
+                    </label>
+                    {% if mailing_form.state.errors %}{{ mailing_form.state | add_class:'error' }}{% else %}{{ mailing_form.state }}{% endif %}
+                </div>
+                <div class="col-xs-12 col-sm-4">
+                    <label for="{{ mailing_form.zip_code.id_for_label }}">
+                        {{ mailing_form.zip_code.label }} <span class="require-asterisk">*</span>
+                        <span class="field_error">{% for error in mailing_form.zip_code.errors %} {{ error }} {% endfor %}</span>
+                    </label>
+                    {% if mailing_form.zip_code.errors %}{{ mailing_form.zip_code | add_class:'error' }}{% else %}{{ mailing_form.zip_code }}{% endif %}
+                </div>
+            </div>
+        </div>
+        <!-- MAILING FORM END -->
+
+        <div class="row">
+            <div class="col-xs-12">
+                <input class="btn btn-primary form-control" type="submit" name="submit" value="Submit">
+            </div>
+        </div>
+    </form>
+
+    <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <iframe width="100%" height="350" src="" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
+
+{% block page_js %}
+<script>
+$(document).ready(function () {
+    var $mailingCheckbox = $('#id_mailing_address_differ');
+    var $mailingForm = $('div#mailing-form');
+
+    toggleMailingForm();
+    
+    $mailingCheckbox.on('change', toggleMailingForm);
+
+    $('[data-toggle="popover"]').popover({placement: 'top', container: 'body'});
+
+    $("body").on('click', '.video', function () {
+        var theModal = $(this).data("target"),
+            videoSRC = $(this).attr("data-video"),
+            videoSRCauto = videoSRC + "?modestbranding=1&rel=0&controls=1&showinfo=0&html5=1&autoplay=1";
+            $(theModal + ' iframe').attr('src', videoSRCauto);
+            $(theModal + ' button.close').click(function () {
+                $(theModal + ' iframe').attr('src', videoSRC);
+        });
+    });
+
+    function toggleMailingForm() {
+        if ($mailingCheckbox.prop('checked')) {
+            $mailingForm.slideDown('slow');
+        } else {
+            $mailingForm.slideUp('slow');
+        }
+    }
+});
+</script>
+{% endblock page_js %}

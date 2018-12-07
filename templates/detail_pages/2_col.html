@@ -1,0 +1,61 @@
+{% extends 'detail_pages/detail_base.html' %}
+{% load front_tags %}
+
+{% block detail-content %}
+    <div class='container'>
+        <div class='row'>
+            <div id='left-section-copy' class='col-xs-12 col-sm-12 col-md-5'>
+                <div class='row'>
+                    <div class='section-copy col-md-12'>
+                        {% block detail-content-left %}
+                            {% front_edit 'left-section-copy' page.id %}
+                                <h1>Lorem ipsum</h1>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                                    veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex.
+                                </p>
+                                <p>
+                                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium. Lorem ipsum dolor sit amet, consectetur
+                                    adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                                </p>
+                            {% end_front_edit %}
+                        {% endblock %}
+                        <div class='clearfix'></div>
+                    </div>
+                </div>
+            </div>
+            <div id='right-section-copy' class='col-xs-12 col-sm-12 col-md-7'>
+                <div class='row'>
+                    <div class='section-copy col-md-12'>
+                        {% block detail-content-right %}
+                            {% front_edit 'right-section-copy' page.id %}
+                                <h2>Lorem ipsum dolor sit</h2>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                                    labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                                    laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                                    voluptate velit esse cillum dolore eu fugiat
+                                </p>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                                    labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                                    laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                                    voluptate velit esse cillum dolore eu fugiat
+                                </p>
+                            {% end_front_edit %}
+                        {% endblock %}
+                        <div class='clearfix'></div>
+
+                        {% ifequal template_add_on 'faq' %}
+                            <div id='template-add-on'>
+                                {% include 'snippets/faq_addon.html' %}
+                            </div>
+                        {% endifequal %}
+
+                        <div class='clearfix'></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

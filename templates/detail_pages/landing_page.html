@@ -1,0 +1,53 @@
+{% extends 'detail_pages/detail_base.html' %}
+{% load front_tags %}
+
+
+{% block detail-content %}
+
+    <div class='container'>
+
+        <div class='row'>
+
+            {% for section in page.sections %}
+                <div class='section-wrapper landing-section col-sm-12 col-md-6 col-lg-6'>
+
+                    <div class='row'>
+
+                        {% if section.image %}
+                            <div class='landing-section-image col-sm-3 col-md-3 col-lg-3'>
+
+                                <img src='{{ section.image }}'>
+
+                            </div>
+                        {% endif %}
+
+                        <div class='landing-section-copy col-sm-9 col-md-9 col-lg-9'>
+
+                            {% front_edit 'landing-section-copy-col' section.id %}
+
+                                <h2>Lorem ipsum</h2>
+
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+                                    minim
+                                    veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+                                </p>
+
+                                <a class='btn info' href='/'>Find out more</a>
+
+                            {% end_front_edit %}
+
+                            <div class='clearfix'></div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+{% endblock %}

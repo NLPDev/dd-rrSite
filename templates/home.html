@@ -1,0 +1,167 @@
+{% extends 'base.html' %}
+{% load thumbnail %}
+{% load front_tags %}
+{% load staticfiles %}
+
+{% block body-id %}ng-app="realclear" id="ng-app"{% endblock %}
+
+{% block extra-head %}
+
+    {{ block.super }}
+    <link type="text/css" rel="stylesheet" href="{% static "css/home.css" %}">
+
+    <script type="text/javascript" src="{% static "js/jquery.flexslider-min.js" %}"></script>
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            $('.billboards').flexslider({
+                animation: 'fade',
+                prevText: '',
+                nextText: '',
+                touch: false,
+                pauseOnHover: false
+            });
+
+            $('.slide-show').flexslider({
+                slideshow: false,
+                animation: 'fade',
+                prevText: '',
+                nextText: '',
+                touch: false,
+                pauseOnHover: false
+            });
+
+        });
+
+    </script>
+
+    {% front_edit_scripts editor='ckeditor' %}
+
+{% endblock %}
+
+
+{% block content %}
+
+    <div id="billboard" class="flexslider billboards">
+
+        <ul class="slides">
+
+            {% for billboard in billboards %}
+                <li style="background-image: url('{{ billboard.image }}');">
+
+                    <div class="transparent-overlay"></div>
+
+                    <div class="container hidden-xs">
+
+                        <div class="slide-content">
+
+                            <h1>{{ billboard.header }}</h1>
+
+                            <h2>{{ billboard.sub_header }}</h2>
+
+                        </div>
+
+                    </div>
+
+                </li>
+            {% endfor %}
+
+        </ul>
+
+    </div>
+
+    <div id="mini-billboards" class="home-section col-md-12 {% ifequal mini_billboard.background_size 'c' %}cover-background{% endifequal %}" {% if mini_billboard.image_background %}style="background-image: url('{{ mini_billboard.image_background }}');"{% endif %}>
+
+        <div class="container">
+
+            <div class="row">
+
+                {% for billboard in mini_billboards %}
+                    <div class="mini-billboard col-xs-12 col-sm-4 col-md-4 col-lg-4">
+
+                        {% if billboard.link %}
+                            <a href="{{ billboard.link }}">
+                        {% endif %}
+
+                        <img src="{{ billboard.image }}">
+
+                        <div class="copy">
+
+                            <h3>{{ billboard.label }}</h3>
+
+                        </div>
+
+                        {% if billboard.link %}
+                            </a>
+                        {% endif %}
+
+                        <div class="clear-both"></div>
+
+                    </div>
+
+                {% endfor %}
+
+                <div class="clear-both"></div>
+
+            </div>
+
+            <div class="clear-both"></div>
+
+        </div>
+
+    </div>
+
+    <div id="sections" class="home-section call-to-action col-md-12 " style="background-image: url('/media/uploads/sections/backgrounds/home_divider.png');">
+
+        <div class="container">
+
+            <div class="row call-to-action">
+
+                <div class="col-xs-12 col-sm-12 col-md-5">
+
+                    <div ng-controller="CommunityCalendarCtrl">
+
+                        <div calendar></div>
+
+                    </div>
+
+                    <a class="btn info" href="{% url 'community:calendar' %}">View Calendar</a>
+
+                </div>
+
+                <div class="col-xs-12 col-sm-1 col-md-1"></div>
+
+                <div class="col-xs-12 col-sm-12 col-md-6 announcements">
+
+                    <h2>{% front_edit "home-announcements-header" %}News{% end_front_edit %}</h2>
+
+                    {% for announcement in announcements %}
+                        <h3><a href="{% url 'announcement:announcement_details' announcement.id %}">{{ announcement.title }}</a></h3>
+                        {% if announcement.photo %}<img class="cell pull-left" src="{% thumbnail announcement.photo 60x60 crop %}" alt="" />{% endif %}
+                        <p class="announcement_date">{{ announcement.event_date|date:"n/j/Y" }}</p>
+                        <p>{{ announcement.content|truncatechars:250 }}</p>
+                    {% endfor %}
+
+                    <a class="btn info" href="{% url 'announcement:announcements' %}">View Announcements</a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+{% endblock %}
+
+
+{% if active_user and active_user.is_staff %}
+    {% block user-actions %}
+
+        <span class="left">
+            <a onclick="displayManageWindow('/admin/navigation/toppernavigation/')">topper</a>
+        </span>
+
+    {% endblock %}
+{% endif %}

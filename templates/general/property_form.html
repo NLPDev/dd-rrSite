@@ -1,0 +1,178 @@
+{% load register_add_class %}
+
+
+{% if messages %}
+    <div class="row messages">
+        {% for message in messages %}
+            <div class="col-xs-12"><p>{{ message }}</p></div>
+        {% endfor %}
+    </div>
+{% endif %}
+
+<form class="form-horizontal" method="post" action="">
+    {% csrf_token %}
+
+    {% if form.non_field_errors %}
+        <div class="row">
+            <div id="non_field_errors" class="col-xs-12">
+                {{ form.non_field_errors }}
+            </div>
+        </div>
+    {% endif %}
+
+    <div class="row">
+        <div class="col-xs-12">
+            <label for="{{ form.community.id_for_label }}">
+                {{ form.community.label }} <span class="require-asterisk">*</span>
+                <span class="field_error">{% for error in form.community.errors %} {{ error }} {% endfor %}</span>
+            </label>
+            {{ form.community }}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12">
+            <label for="{{ form.position.id_for_label }}">
+                {{ form.position.label }}
+                <span class="field_error">{% for error in form.position.errors %} {{ error }} {% endfor %}</span>
+                <span class="helptext">{{ form.position.help_text }}</span>
+            </label>
+            {{ form.position }}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12">
+            <label for="{{ form.lot_number.id_for_label }}">
+                {{ form.lot_number.label }} <span class="require-asterisk">*</span>
+                <span class="glyphicon glyphicon-question-sign"
+                      data-toggle="popover" data-title="Why do we ask for your Lot Number?"
+                      data-content="RCN uses your Lot Number for our internal systems. It is the main identifier for most residential
+                         real estate information contained within local government databases. RCN utilizes local
+                         information provided by County Records as one of our methods to validate the accuracy of
+                         owner information."></span>
+                <span class="field_error">{% for error in form.lot_number.errors %} {{ error }} {% endfor %}</span>
+            </label>
+            {{ form.lot_number }}
+            <div class="bottom-tip-link">
+                <span data-toggle="popover" data-html="true"
+                      data-content="If you do not know your Lot Number, simply follow
+                        <a target='_blank' href='https://www.arcountydata.com/county.asp?county=Benton'>Benton County</a>
+                        or <a target='_blank' href='https://www.actdatascout.com/State/AR/Washington?isPP=False'>Washington County</a>
+                        to be directed towards your respective county records website and search by address, name,
+                        neighborhood, and multiple other options to attain your Lot Number. It only takes a few
+                        seconds, and it is important information for you to know regardless.
+                        <br><br>
+                        If you have more questions about how to perform a search for your Lot Number, watch this
+                        <a href='#' class='video' data-video='https://www.youtube.com/embed/ya4V4UTUDJ0'
+                            data-toggle='modal' data-target='#videoModal'>short video</a>
+                        to see how to perform a search for your lot number.">Can't find your lot number?</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12">
+            <label for="{{ form.address_1.id_for_label }}">
+                {{ form.address_1.label }} <span class="require-asterisk">*</span>
+                <span class="field_error">{% for error in form.address_1.errors %} {{ error }} {% endfor %}</span>
+            </label>
+            {{ form.address_1 }}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12">
+            <label for="{{ form.address_2.id_for_label }}">
+                {{ form.address_2.label }}
+                <span class="field_error">{% for error in form.address_2.errors %} {{ error }} {% endfor %}</span>
+            </label>
+            {{ form.address_2 }}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12 col-sm-5">
+            <label for="{{ form.city.id_for_label }}">
+                {{ form.city.label }} <span class="require-asterisk">*</span>
+                <span class="field_error">{% for error in form.city.errors %} {{ error }} {% endfor %}</span>
+            </label>
+            {{ form.city }}
+        </div>
+
+        <div class="col-xs-12 col-sm-3">
+            <label for="{{ form.state.id_for_label }}">
+                {{ form.state.label }} <span class="require-asterisk">*</span>
+                <span class="field_error">{% for error in form.state.errors %} {{ error }} {% endfor %}</span>
+            </label>
+            {{ form.state }}
+        </div>
+
+        <div class="col-xs-12 col-sm-4">
+            <label for="{{ form.zip_code.id_for_label }}">
+                {{ form.zip_code.label }} <span class="require-asterisk">*</span>
+                <span class="field_error">{% for error in form.zip_code.errors %} {{ error }} {% endfor %}</span>
+            </label>
+            {{ form.zip_code }}
+        </div>
+
+        <div class="col-xs-12">
+            <label for="{{ form.contact.id_for_label }}">
+                {{ form.contact.label }}
+                <span class="field_error">{% for error in form.contact.errors %} {{ error }} {% endfor %}</span>
+            </label>
+            {{ form.contact }}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12">
+            <input class="btn btn-primary form-control" type="submit" value="Add Property">
+        </div>
+    </div>
+</form>
+
+<div class="modal fade" id="videoModal" tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <iframe width="100%" height="350" src="" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+</div> 
+
+<script>
+$(document).ready(function () {
+    var community_data_url = "{% url 'neighbor:ajax-community-data' %}";
+    $('#id_community').on('change', function(e) {
+        $.ajax({
+            url: community_data_url,
+            method: 'get',
+            dataType: 'json',
+            data: { id: this.value },
+        }).done(function (response) {
+            $('#id_city').val(response.city);
+            $('#id_state').val(response.state).trigger('chosen:updated');
+            $('#id_zip_code').val(response.zip_code);
+            $('#id_position').val(response.position);
+        });
+    });
+
+    $("body").on('click', '.video', function () {
+        var theModal = $(this).data("target"),
+            videoSRC = $(this).attr("data-video"),
+            videoSRCauto = videoSRC + "?modestbranding=1&rel=0&controls=1&showinfo=0&html5=1&autoplay=1";
+            $(theModal + ' iframe').attr('src', videoSRCauto);
+            $(theModal + ' button.close').click(function () {
+                $(theModal + ' iframe').attr('src', videoSRC);
+        });
+    });
+
+    $('[data-toggle="popover"]').popover({placement: 'top', container: 'body'});
+});
+</script>
