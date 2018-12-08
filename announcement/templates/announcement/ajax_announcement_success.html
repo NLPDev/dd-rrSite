@@ -1,0 +1,14 @@
+{% load thumbnail %}
+
+<h2>{{ success_content.title }}</h2>
+
+<div class="success_details">
+    {% if event.photo %}<img class="cell pull-left" src="{% thumbnail event.photo 60x60 crop %}" alt="" />{% endif %}
+    <div class="inner_details">
+        <div class="title">{{ event.title }}</div>
+        <div class="location">{{ event.event_date | date:"n/j/Y" }}</div>
+    </div>
+    <div class="clear-both"></div>
+</div>
+
+<p>{{ success_content.message }}</p>

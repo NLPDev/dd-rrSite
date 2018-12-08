@@ -1,0 +1,42 @@
+<form id="announcement_form" class="form-horizontal" action="#" method="post">
+
+    {% csrf_token %}
+
+    {{ form.non_field_errors }}
+
+    <div class="col-xs-12 col-sm-12 col-md-12">
+        {{ form.title.errors }}
+        {{ form.title.label_tag }}
+        {{ form.title }}
+    </div>
+
+    <div class="col-xs-12 col-sm-12 col-md-12">
+        {{ form.content.errors }}
+        {{ form.content.label_tag }}
+        {{ form.content }}
+    </div>
+
+    <div class="image_upload col-xs-12 col-sm-12 col-md-12">
+
+        <div class="col-xs-12 col-sm-12 col-md-6">
+            {{ form.photo.errors }}
+            <label for="id_photo">Upload Photo</label>
+            <div class="image_preview"></div>
+        </div>
+
+        <div class="col-xs-12 col-sm-12 col-md-6">
+            <label>&nbsp;</label>
+            <input id="id_photo" name="image_file" type="file" onchange="previewFile(this)">
+            <input type="text" class="file-input" name="image_filename" placeholder="No file selected" readonly>
+            <a id="file-trigger" class="btn info" onclick="triggerUpload(this);">Upload Picture</a>
+        </div>
+
+    </div>
+
+    <div class="col-md-12">
+        <label>Choose date</label>
+        {{ form.event_date.errors }}
+        <div datepicker></div>
+    </div>
+
+</form>

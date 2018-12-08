@@ -1,0 +1,49 @@
+{% extends 'detail_pages/1_col.html' %}
+{% load staticfiles %}
+{% load front_tags %}
+{% load thumbnail %}
+
+{% block extra-head %}
+    {{ block.super }}
+    <link type="text/css" rel="stylesheet" href="{% static "announcement/css/announcement.css" %}">
+    <script type="text/javascript" src="{% static "announcement/js/tag_filters.js" %}"></script>
+{% endblock %}
+
+{% block body-id %}ng-app="realclear" id="ng-app"{% endblock %}
+
+{% block in_page_nav %}
+
+    <ul class="tag_filter no-list">
+        <li class="top-level list-header">Categories</li>
+        <li class="first active" tag_id="all"><a href="#">All Announcements</a></li>
+        {% for tag in tags %}
+            <li tag_id="{{ tag.id }}"><a href="#">{{ tag }}</a></li>
+        {% endfor %}
+    </ul>
+
+    <div ng-controller="AnnouncementCtrl">
+        <a id="announcement_add_btn" class="btn info left_col_action" ng-click="open()">Add Announcement</a>
+    </div>
+
+{% endblock %}
+
+{% block detail-content-right %}
+
+    {% front_edit 'right-section-copy' page.id %}
+
+        <h1>Announcements</h1>
+
+    {% end_front_edit %}
+
+    <div ng-controller="AnnouncementListCtrl">
+    {% for announcement in announcements %}
+        <div class="announcement_row can_tag_filter {% for tag in announcement.tags.all %}tag_{{ tag.id }} {% endfor %}">
+            <h2 id="announcement_{{ announcement.id }}"><a href="{% url 'announcement:announcement_details' announcement.id %}">{{ announcement.title }}</a></h2>
+            <p class="announcement_date">{{ announcement.event_date | date:"n/j/Y" }}</p>
+            <p>{{ announcement.content | linebreaksbr }}</p>
+            {% if announcement.photo %}<a class="image-popup" ng-click="open('{% thumbnail announcement.photo 950x900 %}')"><img src="{% thumbnail announcement.photo 600x400 %}" alt="" /></a>{% endif %}
+        </div>
+    {% endfor %}
+    </div>
+
+{% endblock %}

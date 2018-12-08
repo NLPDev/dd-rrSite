@@ -1,0 +1,32 @@
+
+#content-wrapper #sections .section-copy h1 {
+    margin-bottom: 60px;
+}
+
+#content-wrapper #sections .section-copy h2 {
+    margin-bottom: 0;
+}
+
+#content-wrapper #sections .section-copy h2 a {
+    font-weight: 700;
+    color: #7E9DBD;
+}
+
+#content-wrapper #sections .section-copy h2 a:hover {
+    color: #97BEE4;
+}
+
+#content-wrapper #sections .section-copy .announcement_row {
+    margin-bottom: 60px;
+}
+
+#content-wrapper #sections p.announcement_date {
+    font-style: italic;
+    color: #97BEE4;
+    margin: 0;
+    font-size: 14px;
+}
+
+.modal .modal-body .success_details img {
+    margin-right: 20px;
+}

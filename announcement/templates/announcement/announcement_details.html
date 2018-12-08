@@ -1,0 +1,37 @@
+{% extends 'detail_pages/2_col.html' %}
+{% load staticfiles %}
+{% load thumbnail %}
+
+{% block extra-head %}
+    {{ block.super }}
+    <link type="text/css" rel="stylesheet" href="{% static "announcement/css/announcement_details.css" %}">
+{% endblock %}
+
+{% block body-id %}ng-app="realclear" id="ng-app"{% endblock %}
+
+{% block detail-content-left %}
+
+    <div ng-controller="AnnouncementDetailsCtrl">
+        {% if announcement.photo %}
+            <a class="image-popup" ng-click="open('{% thumbnail announcement.photo 950x900 %}')"><img src="{% thumbnail announcement.photo 452x800 upscale %}" alt="" /></a>
+        {% endif %}
+    </div>
+
+{% endblock %}
+
+{% block detail-content-right %}
+
+    <h1>{{ announcement.title }}</h1>
+    <p class="event_date">{{ announcement.event_date | date:'n/j/y' }}</p>
+
+    <p>
+        {{ announcement.content }}
+    </p>
+
+    <div class="tags">
+        {% for tag in announcement.tags.all %}
+            {{ tag }}{% if not forloop.last %}, {% endif %}
+        {% endfor %}
+    </div>
+
+{% endblock %}
