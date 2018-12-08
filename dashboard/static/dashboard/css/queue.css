@@ -1,0 +1,16 @@
+.dash-header {
+    background-color: #373b3d;
+    backroung-image: -webkit-gradient(linear, left top, right top, from(#3f4345), to(#373b3d));
+    color: #fff;
+    text-shadow: 0 1px #4f7f92;
+    font-size: 18px;
+    font-weight: 100;
+    letter-spacing: .04em;
+    padding: 12px 10px;
+
+}
+
+.tabs li.tab a {
+    color: #039be5 !important;
+    border-bottom-color: #039be5 !important;
+}

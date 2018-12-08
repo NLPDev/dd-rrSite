@@ -1,0 +1,282 @@
+{% extends "admin/base_site.html" %}
+{% load i18n admin_urls admin_static admin_modify %}
+
+{% block extrastyle %}
+    {{ block.super }}
+    <link rel="stylesheet" type="text/css" href="{% static 'dashboard/css/queue.css' %}" media="all">
+{% endblock %}
+
+{% block extrahead %}
+    <link type='text/css' rel='stylesheet' href='/static/css/chosen.min.css'>
+    <link rel="stylesheet" type="text/css" href="{% static "dashboard/css/materialize.css" %}" media="screen,projection" />
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script type='text/javascript' src="/static/js/chosen.jquery.min.js"></script>
+    
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('select').chosen();
+
+            $('#edit_site_btn').click(function(){
+                var community_id = $('#community_filter').val();
+                if(community_id) {
+                    document.location = '/community/edit/'+community_id+'/';
+                }
+            });
+        })
+    </script>
+
+{% endblock extrahead %}
+
+{% block title %}
+    Admin Dashboard | RCN Community
+{% endblock %}
+
+{% block breadcrumbs %}
+    <ul class="breadcrumb">
+        <li class="active">Admin Dashboard</li>
+    </ul>
+{% endblock %}
+
+{% block content %}
+
+    <div>
+        <select class="browser-default" id="community_filter" onchange="change()" data-placeholder="Select a Community">
+            <option></option>
+            <option value="0">-----</option>
+            {% for community in community_list %}
+                <option value="{{ community.id }}">{{ community.name }}</option>
+            {% endfor %}
+        </select>
+
+        <button class="pull-right btn btn-primary" id="edit_site_btn" style="margin-top: 10px;">Edit Community Site</button>
+        <div style="clear:both;"></div>
+    </div>
+
+    <form action="{% url 'dashboard' %}" method="post">
+        {% csrf_token %}
+
+            <div class="col s12">
+                <ul class="tabs">
+                    <li class="tab col s1"><a class="active" href="#address">Conflicts</a></li>
+                    <li class="tab col s1"><a href="#violation">Violations</a></li>
+                    <li class="tab col s1"><a href="#service">Providers</a></li>
+                    <li class="tab col s1"><a href="#calendar">Calendar</a></li>
+                    <li class="tab col s1"><a href="#announcements">Announcements</a></li>
+                </ul>
+            </div>
+
+            <div id="address" class="col s12">
+                <table id="result_list" class="centered hoverable">
+                    <thead>
+                        <tr data-community="{{ conflict.existing_neighbor.community.id }}">
+                            <th>Resolve</th>
+                            <th>Existing Neighbor</th>
+                            <th>New First Name</th>
+                            <th>New Last Name</th>
+                            <th>New Phone</th>
+                            <th>New Email</th>
+                        </tr>
+                    </thead>
+                    
+                    {% if pending_form.fields.address_conflicts.queryset %}
+                    <tbody>
+                        {% for conflict in pending_form.fields.address_conflicts.queryset %}
+                            <tr data-community="{{ conflict.existing_neighbor.community.id }}">
+                                <td><input id="conflict_{{ conflict.id }}" type="checkbox" name="address_conflicts" value="{{ conflict.id }}" /> <label for="conflict_{{ conflict.id }}">Resolve</label></td>
+                                <td ><a href="/admin/neighbor/neighbor/{{ conflict.existing_neighbor.id }}">{{ conflict.existing_neighbor.first_name }} {{ conflict.existing_neighbor.last_name }}</a></td>
+                                <td >{{ conflict.new_neighbor_first }}</td>
+                                <td >{{ conflict.new_neighbor_last }}</td>
+                                <td>{{ conflict.new_neighbor_phone }}</td>
+                                <td>{{ conflict.new_neighbor_email }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                    {% endif %}
+                </table>
+                
+                <div class="row-fluid" style="margin-top: 10px;">
+                    <button type="submit" class="btn btn-primary" name="save">Approve Selected</button>
+                    <button type="submit" class="pull-right btn btn-warning" name="deny">Deny Selected</button>
+                </div>
+            </div>
+
+
+            {#     Violation Queue Table    #}
+            <div id="violation" class="col s12">
+                <table id="result_list" class="hoverable striped">
+                    <thead>
+                        <tr>
+                            <th>Approve</th>
+                            <th>Neighbor</th>
+                            <th>Submitted On</th>
+                            <th>Violation</th>
+                            <th>Address</th>
+                            <th>Message</th>
+                        </tr>
+                    </thead>
+                    
+                    {% if pending_form.fields.violation_events.queryset %}
+                    <tbody>
+                        {% for violation_event in pending_form.fields.violation_events.queryset %}
+                            <tr data-community="{{ violation_event.violation.community.id }}">
+                                <td><input type="checkbox" name="violation_events" value="{{ violation_event.id }}" id="violation_{{ violation_event.id }}"><label for="violation_{{ violation_event.id }}">Approve</label></td>
+                                <td><a href="/admin/neighbor/neighbor/{{ violation_event.violator.id }}">{{ violation_event.violator }}</a></td>
+                                <td>{{ violation_event.submitted_on }}</td>
+                                <td><a href="/admin/violation/violationevent/{{ violation_event.id }}">{{ violation_event.violation.title }}</a></td>
+                                <td>{{ violation_event.violator_address }}</td>
+                                <td>{{ violation_event.message }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                    {% endif %}
+                </table>
+
+                <div class="row-fluid" style="margin-top: 10px;">
+                    <button type="submit" class="btn btn-primary" name="save">Approve Selected</button>
+                    <button type="submit" class="pull-right btn btn-warning" name="deny">Deny Selected</button>
+                </div>
+            </div>
+
+            {#     Service Provider Table     #}
+            <div id="service" class="col s12">
+                <table id="result_list">
+                    <thead>
+                        <tr data-community="{{ provider.community.id }}">
+                            <th>Approve</th>
+                            <th>Community</th>
+                            <th>Neighbor</th>
+                            <th>Description</th>
+                            <th>Created On</th>
+                        </tr>
+                    </thead>
+                    
+                    {% if pending_form.fields.service_providers.queryset %}
+                    <tbody>
+                        {% for provider in pending_form.fields.service_providers.queryset %}
+                            <tr data-community="{{ provider.community.id }}">
+                                <td><input type="checkbox" name="service_providers" value="{{ provider.id }}" id="provider_{{ provider.id }}"><label for="provider_{{ provider.id }}">Approve</label></td>
+                                <td><a href="/admin/community/community/{{ provider.id }}">{{ provider.community.name }}</a></td>
+                                <td>{{ provider.neighbor }}</td>
+                                <td>{{ provider.description }}</td>
+                                <td>{{ provider.created_on }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                    {% endif %}
+                </table>
+
+                <div class="row-fluid" style="margin-top: 10px;">
+                    <button type="submit" class="btn btn-primary" name="save">Approve Selected</button>
+                    <button type="submit" class="pull-right btn btn-warning" name="deny">Deny Selected</button>
+                </div>
+            </div>
+
+
+            <div id="calendar" class="col s12">
+                <table id="result_list">
+                    <thead>
+                        <tr>
+                            <th>Approve</th>
+                            <th>Community</th>
+                            <th>Title</th>
+                            <th>Location</th>
+                            <th>Start Date</th>
+                            <th>End Date</th>
+                            <th>Description</th>
+                            <th>Contact Info</th>
+                        </tr>
+                    </thead>
+                    {% if pending_form.fields.calendar_events.queryset %}
+                    <tbody>
+                        {% for event in pending_form.fields.calendar_events.queryset %}
+                            <tr data-community="{{ event.neighbor.community.id }}">
+                                <td><input type="checkbox" name="calendar_events" value="{{ event.id }}" id="event_{{ event.id }}"><label for="event_{{ event.id }}">Approve</label></td>
+                                <td><a href="/admin/community/community/{{ event.neighbor.community.id }}/">{{ event.neighbor.community.name }}</a></td>
+                                <td><a href="/admin/neighbor/calendarevent/{{ event.id }}/">{{ event.title }}</a></td>
+                                <td>{{ event.location }}</td>
+                                <td>{{ event.start_date }}</td>
+                                <td>{{ event.end_date }}</td>
+                                <td>{{ event.description }}</td>
+                                <td>{{ event.last_name }}, {{ event.first_name }} {{ event.phone }}<br>{{ event.email }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                    {% endif %}
+                </table>
+
+                <div class="row-fluid" style="margin-top: 10px;">
+                    <button type="submit" class="btn btn-primary" name="save">Approve Selected</button>
+                    <button type="submit" class="pull-right btn btn-warning" name="deny">Deny Selected</button>
+                </div>
+            </div>
+
+            <div id="announcements" class="col s12">
+                <table id="result_list">
+                    <thead>
+                        <tr data-community="{{ announcement.community.id }}">
+                            <th>Approve</th>
+                            <th class="sortable">Title</th>
+                            <th class="sortable">Date Submitted</th>
+                            <th class="sortable">Community</th>
+                            <th class="sortable">Neighbor</th>
+                        </tr>
+                    </thead>
+                    
+                    {% if pending_form.fields.announcements.queryset %}
+                    <tbody>
+                        {% for announcement in pending_form.fields.announcements.queryset %}
+                            <tr data-community="{{ announcement.community.id }}">
+                                <td><input type="checkbox" name="announcements" value="{{ announcement.id }}" id="announcement_{{ announcement.id }}"><label for="announcement_{{ announcement.id }}">Approve</label></td>
+                                <td><a href="/admin/announcement/announcement/{{ announcement.id }}/">{{ announcement.title }}</a></td>
+                                <td>{{ announcement.date }}</td>
+                                <td>{{ announcement.community.name }}</td>
+                                <td>{{ announcement.neighbor }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                    {% endif %}
+                </table>
+
+                <div class="row-fluid" style="margin-top: 10px;">
+                    <button type="submit" class="btn btn-primary" name="save">Approve Selected</button>
+                    <button type="submit" class="pull-right btn btn-warning" name="deny">Deny Selected</button>
+                </div>
+            </div>
+
+    </form>
+
+    {% if request.user.is_superuser %}
+    <form action="{% url 'super_su' %}" method="post" class="col s10">
+        <div><h4>Neighbor needs help?</h4></div>
+        {% csrf_token %}
+        <label>Take a look through their eyes and really get down to the issue</label>
+        <select class="browser-default" name="user_id">
+            <option value="" disabled selected>Choose a Neighbor</option>
+            {% for user in users %}
+            {% if not user.is_superuser %}
+            <option value="{{ user.id }}">{{ user.username }}</option>
+            {% endif %}
+            {% endfor %}
+        </select>
+
+        <button type="submit" class="btn btn-primary" style="margin-top: 10px;">Walk in their shoes</button>
+    </form>
+    {% endif %}
+
+
+    <!-- Materialize Testing -->
+    <script type="text/javascript" src="{% static "dashboard/js/materialize.js" %}"></script>
+    <script type="text/javascript">
+        function change() {
+            var community_options = document.getElementById("community_filter");
+            var community = community_options.value;
+
+            if (community == '0') {
+                var rows = $('table tbody tr[data-community!="' + community + '"]').show('slow');
+            } else {
+                var rows = $('table tbody tr[data-community!="' + community + '"]').toggle('slow');
+            }
+        }
+    </script>
+{% endblock %}
