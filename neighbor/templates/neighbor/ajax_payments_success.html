@@ -1,0 +1,18 @@
+<h2>{{ success_content.title }}</h2>
+
+{% for payment in payment_objects %}
+    <div class="success_details">
+        <div class="row_amount">${{ payment.amount }}</div>
+        <p>{{ payment.title }}</p>
+        <div class="clear-both"></div>
+    </div>
+{% endfor %}
+
+{% if transaction %}
+    <div class="success_details">
+        <div class="order_total_container"><span>Total:</span> ${{ transaction.amount }}</div>
+        <div class="clear-both"></div>
+    </div>
+{% endif %}
+
+<p>{{ success_content.message }}</p>

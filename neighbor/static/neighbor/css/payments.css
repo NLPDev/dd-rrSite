@@ -1,0 +1,163 @@
+
+#content-wrapper #payments_form .exp_date_container .expirydatefield:first-child {
+    padding-left: 0;
+}
+
+#content-wrapper #payments_form .exp_date_container .expirydatefield:last-child {
+    padding-right: 0;
+}
+
+#content-wrapper #small-contact-form .sub-head {
+    padding-top: 10px;
+    padding-bottom: 40px;
+}
+
+#content-wrapper #small-contact-form .sub-head label {
+    text-transform: uppercase;
+    color: #7E9DBD;
+}
+
+#content-wrapper #sections h2 span {
+    font-style: italic;
+    color: #97BEE4;
+    font-size: 14px;
+    font-family: 'Merriweather', Georgia, serif;
+    line-height: 1.8em;
+    text-transform: none;
+}
+
+#content-wrapper #sections #payments ul {
+    list-style: none;
+}
+
+#content-wrapper #sections #payments ul li {
+    margin-top: 40px;
+}
+
+#content-wrapper #sections #payments ul label {
+    color: #8B8F96;
+    font-family: 'Merriweather', Georgia, serif;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.4em;
+    cursor: pointer;
+    width: 100%;
+    /* prevent annoying highlighting */
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+#content-wrapper #sections #payments ul div.due_date {
+    font-family: 'Merriweather', Georgia, serif;
+    font-style: italic;
+    color: #97BEE4;
+    font-size: 14px;
+    text-transform: none;
+    font-weight: 400;
+    display: block;
+    margin-left: 40px;
+}
+
+#content-wrapper #sections #payments ul div.payment_choice_cost {
+    float: right;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #7E9DBD;
+    font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+    margin-top: 20px;
+}
+
+#content-wrapper #sections #payments ul input[type=checkbox] {
+    display:none;
+}
+
+#content-wrapper #sections #payments ul .checkbox_icon {
+    width: 27px;
+    height: 27px;
+    margin-right: 20px;
+    background-color: transparent;
+    display: inline-block;
+    border: 3px solid #7E9DBD;
+    float: left;
+    position: relative;
+    top: 2px;
+    border-radius: 2px;
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #7E9DBD;
+}
+
+#content-wrapper #sections #payments ul input[type=checkbox]:checked + .checkbox_icon {
+    /* border-color: red; */
+}
+
+#content-wrapper #sections #payments ul input[type=checkbox]:checked + .checkbox_icon:before {
+    content: '\00d7'; /* equivalent to &times; */
+    font-size: 27px;
+    position: relative;
+    top: 2px;
+    left: 3px;
+    font-weight: 400;
+    font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+}
+
+#content-wrapper #sections #payments #payments_footer {
+    text-align: right;
+    margin-top: 60px;
+}
+
+#content-wrapper #sections #payments #payments_footer label {
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #7E9DBD;
+    font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+}
+
+#content-wrapper #sections #payments #payments_footer p {
+    font-style: italic;
+    font-size: 14px;
+}
+
+.modal .modal-body div.success_details p {
+    font-size: 16px;
+    font-style: normal;
+}
+
+.modal .modal-body .order_total_container {
+    float: right;
+    font-weight: 400;
+}
+
+.modal .modal-body .order_total_container span {
+    text-transform: uppercase;
+    color: #7E9DBD;
+    font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+}
+
+.modal .modal-body .row_amount {
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #7E9DBD;
+    font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+    float: right;
+    margin-top: 5px;
+}
+
+/*==
+RESPONSIVENESS
+==*/
+@media (max-width: 991px) {
+
+    form .exp_date_container .expirydatefield {
+        padding: 0;
+    }
+
+}
+/*==
+END RESPONSIVENESS
+==*/

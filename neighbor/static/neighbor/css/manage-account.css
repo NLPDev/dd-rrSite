@@ -1,0 +1,193 @@
+.calendar-icon {
+    background-image: url('../images/calendar_icon.png');
+    background-size: contain;
+    background-position: 50% 100%;
+    background-repeat: no-repeat;
+    height: 50px;
+    max-height: 50px;
+    max-width: 50px;
+    width: 50px;
+}
+
+.base {
+    padding-left:35px;
+	padding-right:35px;
+	padding-top:35px;
+	padding-bottom:50px;
+    margin-top:30px;
+}
+
+.calendar-number {
+    text-align: center;
+    height: 50px;
+    width: 50px;
+    align-content: center;
+    padding-top: 20px;
+    color: #BCC0C3;
+}
+
+.side-form {
+    float: left;
+    padding-top:35px;
+	padding-bottom:50px;
+    background-color: #EDF1F1;
+}
+
+.form-header {
+    background-color: #80A0BD;
+    padding: 13px 13px 13px;
+    font-weight: 900;
+    font-size: 18px;
+    text-transform: uppercase;
+    color: #ffffff;
+    height: 50px;
+}
+
+.side-form label {
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: 100;
+    font-size: 10px;
+    color: #BCC0C3;
+    text-transform: uppercase;
+}
+
+.side-form .body {
+    background-color: #EDF1F1;
+}
+
+#small-contact-form .sub-head {
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 20px;
+    margin-bottom: 60px;
+    color: #BCC0C3;
+}
+
+#small-contact-form .sub-head .name {
+    color: #80A0BD;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 22px;
+    margin-bottom: 5px;
+}
+
+#small-contact-form .sub-head .title {
+    font-size: 16px;
+    font-style: italic;
+    font-family: 'Merriweather', Georgia, serif;
+    color: #8B8F96;
+}
+
+#content-wrapper #sections #recent-activity h4 {
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: .03em;
+    margin-bottom: 15px;
+}
+
+#content-wrapper #sections #recent-activity .activity-row {
+    padding: 30px 0 20px 0;
+}
+
+#content-wrapper #sections #recent-activity .activity-row .title {
+    margin-bottom: 5px;
+}
+
+#content-wrapper #sections #recent-activity .activity-row .title a {
+    text-transform: uppercase;
+    color: #80A0BD;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+#content-wrapper #sections #recent-activity .activity-row .title a:hover {
+    color: #97BEE4;
+}
+
+#content-wrapper #sections #recent-activity .activity-row .time {
+    color: #97BEE4;
+    font-size: 14px;
+    font-style: italic;
+    font-family: 'Merriweather', Georgia, serif;
+    line-height: 22px;
+}
+
+#content-wrapper #sections #recent-activity .activity-row .time_block {
+    color: #617286;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-family: 'Merriweather', Georgia, serif;
+    font-weight: 400;
+}
+
+#content-wrapper #sections #recent-activity .activity-row .month {
+    text-transform: uppercase;
+    color: #80A0BD;
+    font-weight: 700;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+#content-wrapper #sections #recent-activity .activity-row .cancel {
+    color: #BCC0C3;
+    font-size: 14px;
+    font-style: italic;
+    font-family: 'Merriweather', Georgia, serif;
+    line-height: 22px;
+    display: block;
+    clear: both;
+    cursor: pointer;
+}
+
+#content-wrapper #sections #recent-activity .activity-row .details {
+    margin-top: 20px;
+}
+
+#content-wrapper #sections #recent-activity .month {
+    clear:both;
+}
+
+#content-wrapper #sections #recent-activity .calendar_icon {
+    width: 60px;
+    height: 60px;
+    float: left;
+    text-align: center;
+    line-height: 77px;
+    background-image: url('/static/images/calendar_icon.png');
+    font-size: 18px;
+    margin: 0 20px 10px 0;
+}
+
+#content-wrapper #sections #recent-activity img.pull-left {
+    margin: 0 20px 10px 0;
+}
+
+#content-wrapper #sections #recent-activity .activity-row .details .location {
+    color: #97BEE4;
+    font-size: 14px;
+    font-style: italic;
+    font-family: 'Merriweather', Georgia, serif;
+    line-height: 22px;
+    margin-bottom: 20px;
+}
+
+#content-wrapper #sections #recent-activity #payment-wrapper.activity-row .title a {
+    font-family: 'Merriweather', Georgia, serif;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.8em;
+    text-transform: none;
+    color: #8B8F96;
+}
+
+#content-wrapper #sections #recent-activity #payment-wrapper.activity-row .title a:hover {
+    color: #97BEE4;
+}
+
+#content-wrapper #sections #recent-activity .activity-row .details .amount {
+    color: #80A0BD;
+    float: right;
+    padding-right: 80px;
+}

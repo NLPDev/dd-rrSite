@@ -1,0 +1,160 @@
+{% extends 'detail_pages/2_col.html' %}
+{% load front_tags %}
+{% load thumbnail %}
+{% load staticfiles %}
+
+{% block extra-head %}
+    {{ block.super }}
+    <link type="text/css" rel="stylesheet" href="{% static "neighbor/css/payments.css" %}">
+    <script type="text/javascript" src="{% static "neighbor/js/payments.js" %}"></script>
+{% endblock %}
+
+{% block body-id %}ng-app="realclear" id="ng-app"{% endblock %}
+
+{% block detail-content-left %}
+
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+    <div id="small-contact-form">
+        <div class="title-wrapper">
+            <h2>Make Payments</h2>
+        </div>
+
+        <div ng-controller="PaymentCtrl"  class="col-sm-12 col-md-12">
+            <div class="sub-head col-md-12">
+                {% if not payments.fields.violations.queryset and not payments.fields.dues.queryset %}
+                    <div><label>No Payments Due</label></div>
+                {% else %}
+                    <div><label>Amount Due:</label> $<span id="preview_amount_due">0.00</span></div>
+                    <div><label>Due By:</label> <span id="preview_due_by"></span></div>
+                {% endif %}
+            </div>
+            <form id="payments_form" method="post">
+
+                {% csrf_token %}
+
+                {{ payments.non_field_errors }}
+
+                <div class="col-md-12">
+                    {{ payments.name_on_card.errors }}
+                    {{ payments.name_on_card.label_tag }}
+                    {{ payments.name_on_card }}
+                </div>
+
+                <div class="col-md-12">
+                    {{ payments.card_number.errors }}
+                    {{ payments.card_number.label_tag }}
+                    {{ payments.card_number }}
+                </div>
+
+                <div class="col-xs-12 col-sm-12 col-md-6">
+                    {{ payments.card_type.errors }}
+                    {{ payments.card_type.label_tag }}
+                    {{ payments.card_type }}
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-6">
+                    {{ payments.security_code.errors }}
+                    {{ payments.security_code.label_tag }}
+                    {{ payments.security_code }}
+                </div>
+
+                <div class="col-md-12">
+                    {{ payments.exp_date.errors }}
+                    {{ payments.exp_date.label_tag }}
+                    <div class="exp_date_container">{{ payments.exp_date }}</div>
+                </div>
+
+                <div class="col-md-12">
+                    <a id="payment_btn" class="btn info" {% if payments.fields.violations.queryset or payments.fields.dues.queryset %}ng-click="process()"{% endif %}>Make Payment</a>
+                </div>
+
+            <!-- no end form here, see bottom of detail-content-right -->
+        </div>
+    </div>
+
+
+
+
+
+{% endblock %}
+
+{% block detail-content-right %}
+
+    {% front_edit 'right-section-copy' page.id %}
+
+        <h1>Your Payments</h1>
+
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+            voluptate velit esse cillum dolore eu fugiat
+        </p>
+
+    {% end_front_edit %}
+
+    {% if not payments.fields.violations.queryset and not payments.fields.dues.queryset %}
+
+        <h2>No Payments Due</h2>
+
+    {% else %}
+
+        <h2>Check the desired payments <span>(All that apply)</span></h2>
+
+        <div id="payments">
+
+            <ul>
+                {% for payment in payments.fields.violations.queryset %}
+                    <li>
+                        <label for="id_violations_{{ payment.id }}">
+                            <input id="id_violations_{{ payment.id }}" name="violations" type="checkbox" value="{{ payment.id }}"
+                                   class="payment_choices_checkbox" />
+                            <span class="checkbox_icon"></span>
+                            {{ payment.violation.title }}
+                            <div class="payment_choice_cost">
+                                ${{ payment.amount }}
+                                <input type="hidden" name="cost_violations_choices_{{ payment.id }}" value="{{ payment.amount }}"
+                                       class="payment_choices_cost" />
+                            </div>
+                            <div class="due_date">Due by: <span class="payment_choices_due">{{ payment.due_date }}</span></div>
+                        </label>
+                    </li>
+                {% endfor %}
+
+                {% for payment in payments.fields.dues.queryset %}
+                    <li>
+                        <label for="id_dues_{{ payment.id }}">
+                            <input id="id_dues_{{ payment.id }}" name="dues" type="checkbox" value="{{ payment.id }}"
+                                   class="payment_choices_checkbox" />
+                            <span class="checkbox_icon"></span>
+                            {{ payment.dues.title }}
+                            <div class="payment_choice_cost">
+                                ${{ payment.amount }}
+                                <input type="hidden" name="cost_dues_choices_{{ payment.id }}" value="{{ payment.amount }}"
+                                       class="payment_choices_cost" />
+                            </div>
+                            <div class="due_date">Due by: <span class="payment_choices_due">{{ payment.due_date }}</span></div>
+                        </label>
+                    </li>
+                {% endfor %}
+            </ul>
+
+            <div id="payments_footer">
+                <label>Sub Total:</label> $<span id="preview_subtotal">0.00</span>
+                <p>($5.00 processing fee lorem ipsum)</p>
+            </div>
+
+            <hr />
+        </div>
+
+    {% endif %}
+
+    </form>
+
+{% endblock %}

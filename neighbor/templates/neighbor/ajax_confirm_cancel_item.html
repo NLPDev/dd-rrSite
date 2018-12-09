@@ -1,0 +1,10 @@
+Are you sure you want to remove this {{ model }}?
+
+<form id="cancel_item_form" class="form-horizontal" action="#" method="post">
+
+    {% csrf_token %}
+
+    <input type="hidden" name="model" value="{{ model }}" />
+    <input type="hidden" name="id" value="{{ id }}" />
+
+</form>
