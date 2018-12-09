@@ -1,0 +1,1098 @@
+ERROR 2018-12-07 12:32:26,814 base.py handle_uncaught_exception 231 Internal Server Error: /login/
+Traceback (most recent call last):
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/core/handlers/base.py", line 204, in get_response
+    response = middleware_method(request, response)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/contrib/sessions/middleware.py", line 42, in process_response
+    request.session.save()
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/contrib/sessions/backends/db.py", line 57, in save
+    session_key=self._get_or_create_session_key(),
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/contrib/sessions/backends/base.py", line 155, in _get_or_create_session_key
+    self._session_key = self._get_new_session_key()
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/contrib/sessions/backends/base.py", line 149, in _get_new_session_key
+    if not self.exists(session_key):
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/contrib/sessions/backends/db.py", line 33, in exists
+    return Session.objects.filter(session_key=session_key).exists()
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/query.py", line 606, in exists
+    return self.query.has_results(using=self.db)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/sql/query.py", line 457, in has_results
+    return compiler.has_results()
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 757, in has_results
+    return bool(self.execute_sql(SINGLE))
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 786, in execute_sql
+    cursor.execute(sql, params)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/backends/utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/utils.py", line 94, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/backends/utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+ProgrammingError: relation "django_session" does not exist
+LINE 1: SELECT (1) AS "a" FROM "django_session" WHERE "django_sessio...
+                               ^
+
+ERROR 2018-12-07 12:32:26,814 base.py handle_uncaught_exception 231 Internal Server Error: /login/
+Traceback (most recent call last):
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/core/handlers/base.py", line 204, in get_response
+    response = middleware_method(request, response)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/contrib/sessions/middleware.py", line 42, in process_response
+    request.session.save()
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/contrib/sessions/backends/db.py", line 57, in save
+    session_key=self._get_or_create_session_key(),
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/contrib/sessions/backends/base.py", line 155, in _get_or_create_session_key
+    self._session_key = self._get_new_session_key()
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/contrib/sessions/backends/base.py", line 149, in _get_new_session_key
+    if not self.exists(session_key):
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/contrib/sessions/backends/db.py", line 33, in exists
+    return Session.objects.filter(session_key=session_key).exists()
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/query.py", line 606, in exists
+    return self.query.has_results(using=self.db)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/sql/query.py", line 457, in has_results
+    return compiler.has_results()
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 757, in has_results
+    return bool(self.execute_sql(SINGLE))
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 786, in execute_sql
+    cursor.execute(sql, params)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/backends/utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/utils.py", line 94, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/backends/utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+ProgrammingError: relation "django_session" does not exist
+LINE 1: SELECT (1) AS "a" FROM "django_session" WHERE "django_sessio...
+                               ^
+
+ERROR 2018-12-07 12:37:15,948 base.py handle_uncaught_exception 231 Internal Server Error: /static/css/base.css/
+Traceback (most recent call last):
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/page_content/views.py", line 18, in view_web_page
+    community = Community.objects.get(slug=path)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/manager.py", line 92, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/query.py", line 357, in get
+    self.model._meta.object_name)
+DoesNotExist: Community matching query does not exist.
+ERROR 2018-12-07 12:37:15,948 base.py handle_uncaught_exception 231 Internal Server Error: /static/css/base.css/
+Traceback (most recent call last):
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/page_content/views.py", line 18, in view_web_page
+    community = Community.objects.get(slug=path)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/manager.py", line 92, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/query.py", line 357, in get
+    self.model._meta.object_name)
+DoesNotExist: Community matching query does not exist.
+ERROR 2018-12-07 12:37:16,217 base.py handle_uncaught_exception 231 Internal Server Error: /static/css/portal.css/
+Traceback (most recent call last):
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/page_content/views.py", line 18, in view_web_page
+    community = Community.objects.get(slug=path)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/manager.py", line 92, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/query.py", line 357, in get
+    self.model._meta.object_name)
+DoesNotExist: Community matching query does not exist.
+ERROR 2018-12-07 12:37:16,217 base.py handle_uncaught_exception 231 Internal Server Error: /static/css/portal.css/
+Traceback (most recent call last):
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/page_content/views.py", line 18, in view_web_page
+    community = Community.objects.get(slug=path)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/manager.py", line 92, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/query.py", line 357, in get
+    self.model._meta.object_name)
+DoesNotExist: Community matching query does not exist.
+ERROR 2018-12-07 12:37:16,221 base.py handle_uncaught_exception 231 Internal Server Error: /static/css/front_overrides.css/
+Traceback (most recent call last):
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/page_content/views.py", line 18, in view_web_page
+    community = Community.objects.get(slug=path)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/manager.py", line 92, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/query.py", line 357, in get
+    self.model._meta.object_name)
+DoesNotExist: Community matching query does not exist.
+ERROR 2018-12-07 12:37:16,221 base.py handle_uncaught_exception 231 Internal Server Error: /static/css/front_overrides.css/
+Traceback (most recent call last):
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/page_content/views.py", line 18, in view_web_page
+    community = Community.objects.get(slug=path)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/manager.py", line 92, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/query.py", line 357, in get
+    self.model._meta.object_name)
+DoesNotExist: Community matching query does not exist.
+ERROR 2018-12-07 12:37:16,239 base.py handle_uncaught_exception 231 Internal Server Error: /static/css/chosen.min.css/
+Traceback (most recent call last):
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/page_content/views.py", line 18, in view_web_page
+    community = Community.objects.get(slug=path)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/manager.py", line 92, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/query.py", line 357, in get
+    self.model._meta.object_name)
+DoesNotExist: Community matching query does not exist.
+ERROR 2018-12-07 12:37:16,239 base.py handle_uncaught_exception 231 Internal Server Error: /static/css/chosen.min.css/
+Traceback (most recent call last):
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/page_content/views.py", line 18, in view_web_page
+    community = Community.objects.get(slug=path)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/manager.py", line 92, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/query.py", line 357, in get
+    self.model._meta.object_name)
+DoesNotExist: Community matching query does not exist.
+ERROR 2018-12-07 12:37:16,246 base.py handle_uncaught_exception 231 Internal Server Error: /static/css/detail.css/
+Traceback (most recent call last):
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/page_content/views.py", line 18, in view_web_page
+    community = Community.objects.get(slug=path)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/manager.py", line 92, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/query.py", line 357, in get
+    self.model._meta.object_name)
+DoesNotExist: Community matching query does not exist.
+ERROR 2018-12-07 12:37:16,246 base.py handle_uncaught_exception 231 Internal Server Error: /static/css/detail.css/
+Traceback (most recent call last):
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/page_content/views.py", line 18, in view_web_page
+    community = Community.objects.get(slug=path)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/manager.py", line 92, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/query.py", line 357, in get
+    self.model._meta.object_name)
+DoesNotExist: Community matching query does not exist.
+ERROR 2018-12-07 12:37:16,543 base.py handle_uncaught_exception 231 Internal Server Error: /static/js/menu.js/
+Traceback (most recent call last):
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/page_content/views.py", line 18, in view_web_page
+    community = Community.objects.get(slug=path)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/manager.py", line 92, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/query.py", line 357, in get
+    self.model._meta.object_name)
+DoesNotExist: Community matching query does not exist.
+ERROR 2018-12-07 12:37:16,543 base.py handle_uncaught_exception 231 Internal Server Error: /static/js/menu.js/
+Traceback (most recent call last):
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/page_content/views.py", line 18, in view_web_page
+    community = Community.objects.get(slug=path)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/manager.py", line 92, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/query.py", line 357, in get
+    self.model._meta.object_name)
+DoesNotExist: Community matching query does not exist.
+ERROR 2018-12-07 12:37:16,553 base.py handle_uncaught_exception 231 Internal Server Error: /static/js/user_actions.js/
+Traceback (most recent call last):
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/page_content/views.py", line 18, in view_web_page
+    community = Community.objects.get(slug=path)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/manager.py", line 92, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/query.py", line 357, in get
+    self.model._meta.object_name)
+DoesNotExist: Community matching query does not exist.
+ERROR 2018-12-07 12:37:16,553 base.py handle_uncaught_exception 231 Internal Server Error: /static/js/user_actions.js/
+Traceback (most recent call last):
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/page_content/views.py", line 18, in view_web_page
+    community = Community.objects.get(slug=path)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/manager.py", line 92, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/query.py", line 357, in get
+    self.model._meta.object_name)
+DoesNotExist: Community matching query does not exist.
+ERROR 2018-12-07 12:37:16,566 base.py handle_uncaught_exception 231 Internal Server Error: /static/js/ckeditor/ckeditor.js/
+Traceback (most recent call last):
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/page_content/views.py", line 18, in view_web_page
+    community = Community.objects.get(slug=path)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/manager.py", line 92, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/query.py", line 357, in get
+    self.model._meta.object_name)
+DoesNotExist: Community matching query does not exist.
+ERROR 2018-12-07 12:37:16,566 base.py handle_uncaught_exception 231 Internal Server Error: /static/js/ckeditor/ckeditor.js/
+Traceback (most recent call last):
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/page_content/views.py", line 18, in view_web_page
+    community = Community.objects.get(slug=path)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/manager.py", line 92, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/query.py", line 357, in get
+    self.model._meta.object_name)
+DoesNotExist: Community matching query does not exist.
+ERROR 2018-12-07 12:37:16,588 base.py handle_uncaught_exception 231 Internal Server Error: /static/js/chosen.jquery.min.js/
+Traceback (most recent call last):
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/page_content/views.py", line 18, in view_web_page
+    community = Community.objects.get(slug=path)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/manager.py", line 92, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/query.py", line 357, in get
+    self.model._meta.object_name)
+DoesNotExist: Community matching query does not exist.
+ERROR 2018-12-07 12:37:16,588 base.py handle_uncaught_exception 231 Internal Server Error: /static/js/chosen.jquery.min.js/
+Traceback (most recent call last):
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/page_content/views.py", line 18, in view_web_page
+    community = Community.objects.get(slug=path)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/manager.py", line 92, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/query.py", line 357, in get
+    self.model._meta.object_name)
+DoesNotExist: Community matching query does not exist.
+ERROR 2018-12-07 12:37:16,841 base.py handle_uncaught_exception 231 Internal Server Error: /static/js/menu.js/
+Traceback (most recent call last):
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/page_content/views.py", line 18, in view_web_page
+    community = Community.objects.get(slug=path)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/manager.py", line 92, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/query.py", line 357, in get
+    self.model._meta.object_name)
+DoesNotExist: Community matching query does not exist.
+ERROR 2018-12-07 12:37:16,841 base.py handle_uncaught_exception 231 Internal Server Error: /static/js/menu.js/
+Traceback (most recent call last):
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/page_content/views.py", line 18, in view_web_page
+    community = Community.objects.get(slug=path)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/manager.py", line 92, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/query.py", line 357, in get
+    self.model._meta.object_name)
+DoesNotExist: Community matching query does not exist.
+ERROR 2018-12-07 12:37:17,011 base.py handle_uncaught_exception 231 Internal Server Error: /static/js/user_actions.js/
+Traceback (most recent call last):
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/page_content/views.py", line 18, in view_web_page
+    community = Community.objects.get(slug=path)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/manager.py", line 92, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/query.py", line 357, in get
+    self.model._meta.object_name)
+DoesNotExist: Community matching query does not exist.
+ERROR 2018-12-07 12:37:17,011 base.py handle_uncaught_exception 231 Internal Server Error: /static/js/user_actions.js/
+Traceback (most recent call last):
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/page_content/views.py", line 18, in view_web_page
+    community = Community.objects.get(slug=path)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/manager.py", line 92, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/query.py", line 357, in get
+    self.model._meta.object_name)
+DoesNotExist: Community matching query does not exist.
+ERROR 2018-12-07 12:37:17,159 base.py handle_uncaught_exception 231 Internal Server Error: /static/js/ckeditor/ckeditor.js/
+Traceback (most recent call last):
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/page_content/views.py", line 18, in view_web_page
+    community = Community.objects.get(slug=path)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/manager.py", line 92, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/query.py", line 357, in get
+    self.model._meta.object_name)
+DoesNotExist: Community matching query does not exist.
+ERROR 2018-12-07 12:37:17,159 base.py handle_uncaught_exception 231 Internal Server Error: /static/js/ckeditor/ckeditor.js/
+Traceback (most recent call last):
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/page_content/views.py", line 18, in view_web_page
+    community = Community.objects.get(slug=path)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/manager.py", line 92, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/query.py", line 357, in get
+    self.model._meta.object_name)
+DoesNotExist: Community matching query does not exist.
+ERROR 2018-12-07 12:37:17,328 base.py handle_uncaught_exception 231 Internal Server Error: /static/css/detail.css/
+Traceback (most recent call last):
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/page_content/views.py", line 18, in view_web_page
+    community = Community.objects.get(slug=path)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/manager.py", line 92, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/query.py", line 357, in get
+    self.model._meta.object_name)
+DoesNotExist: Community matching query does not exist.
+ERROR 2018-12-07 12:37:17,328 base.py handle_uncaught_exception 231 Internal Server Error: /static/css/detail.css/
+Traceback (most recent call last):
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/page_content/views.py", line 18, in view_web_page
+    community = Community.objects.get(slug=path)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/manager.py", line 92, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/query.py", line 357, in get
+    self.model._meta.object_name)
+DoesNotExist: Community matching query does not exist.
+ERROR 2018-12-07 12:37:17,488 base.py handle_uncaught_exception 231 Internal Server Error: /static/css/chosen.min.css/
+Traceback (most recent call last):
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/page_content/views.py", line 18, in view_web_page
+    community = Community.objects.get(slug=path)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/manager.py", line 92, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/query.py", line 357, in get
+    self.model._meta.object_name)
+DoesNotExist: Community matching query does not exist.
+ERROR 2018-12-07 12:37:17,488 base.py handle_uncaught_exception 231 Internal Server Error: /static/css/chosen.min.css/
+Traceback (most recent call last):
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/page_content/views.py", line 18, in view_web_page
+    community = Community.objects.get(slug=path)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/manager.py", line 92, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/query.py", line 357, in get
+    self.model._meta.object_name)
+DoesNotExist: Community matching query does not exist.
+ERROR 2018-12-07 12:37:17,493 base.py handle_uncaught_exception 231 Internal Server Error: /static/js/chosen.jquery.min.js/
+Traceback (most recent call last):
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/page_content/views.py", line 18, in view_web_page
+    community = Community.objects.get(slug=path)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/manager.py", line 92, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/query.py", line 357, in get
+    self.model._meta.object_name)
+DoesNotExist: Community matching query does not exist.
+ERROR 2018-12-07 12:37:17,493 base.py handle_uncaught_exception 231 Internal Server Error: /static/js/chosen.jquery.min.js/
+Traceback (most recent call last):
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/page_content/views.py", line 18, in view_web_page
+    community = Community.objects.get(slug=path)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/manager.py", line 92, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/query.py", line 357, in get
+    self.model._meta.object_name)
+DoesNotExist: Community matching query does not exist.
+ERROR 2018-12-07 12:37:17,796 base.py handle_uncaught_exception 231 Internal Server Error: /static/images/portal_main_image.jpg/
+Traceback (most recent call last):
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/page_content/views.py", line 18, in view_web_page
+    community = Community.objects.get(slug=path)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/manager.py", line 92, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/query.py", line 357, in get
+    self.model._meta.object_name)
+DoesNotExist: Community matching query does not exist.
+ERROR 2018-12-07 12:37:17,796 base.py handle_uncaught_exception 231 Internal Server Error: /static/images/portal_main_image.jpg/
+Traceback (most recent call last):
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/page_content/views.py", line 18, in view_web_page
+    community = Community.objects.get(slug=path)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/manager.py", line 92, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/query.py", line 357, in get
+    self.model._meta.object_name)
+DoesNotExist: Community matching query does not exist.
+ERROR 2018-12-07 12:37:18,373 base.py handle_uncaught_exception 231 Internal Server Error: /static/images/favicon.ico/
+Traceback (most recent call last):
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/page_content/views.py", line 18, in view_web_page
+    community = Community.objects.get(slug=path)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/manager.py", line 92, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/query.py", line 357, in get
+    self.model._meta.object_name)
+DoesNotExist: Community matching query does not exist.
+ERROR 2018-12-07 12:37:18,373 base.py handle_uncaught_exception 231 Internal Server Error: /static/images/favicon.ico/
+Traceback (most recent call last):
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/page_content/views.py", line 18, in view_web_page
+    community = Community.objects.get(slug=path)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/manager.py", line 92, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/query.py", line 357, in get
+    self.model._meta.object_name)
+DoesNotExist: Community matching query does not exist.
+ERROR 2018-12-07 12:40:27,816 base.py handle_uncaught_exception 231 Internal Server Error: /static/css/base.css/
+Traceback (most recent call last):
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/page_content/views.py", line 18, in view_web_page
+    community = Community.objects.get(slug=path)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/manager.py", line 92, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/query.py", line 357, in get
+    self.model._meta.object_name)
+DoesNotExist: Community matching query does not exist.
+ERROR 2018-12-07 12:40:27,816 base.py handle_uncaught_exception 231 Internal Server Error: /static/css/base.css/
+Traceback (most recent call last):
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/page_content/views.py", line 18, in view_web_page
+    community = Community.objects.get(slug=path)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/manager.py", line 92, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/query.py", line 357, in get
+    self.model._meta.object_name)
+DoesNotExist: Community matching query does not exist.
+ERROR 2018-12-07 12:40:28,140 base.py handle_uncaught_exception 231 Internal Server Error: /static/css/portal.css/
+Traceback (most recent call last):
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/page_content/views.py", line 18, in view_web_page
+    community = Community.objects.get(slug=path)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/manager.py", line 92, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/query.py", line 357, in get
+    self.model._meta.object_name)
+DoesNotExist: Community matching query does not exist.
+ERROR 2018-12-07 12:40:28,140 base.py handle_uncaught_exception 231 Internal Server Error: /static/css/portal.css/
+Traceback (most recent call last):
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/page_content/views.py", line 18, in view_web_page
+    community = Community.objects.get(slug=path)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/manager.py", line 92, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/query.py", line 357, in get
+    self.model._meta.object_name)
+DoesNotExist: Community matching query does not exist.
+ERROR 2018-12-07 12:40:28,140 base.py handle_uncaught_exception 231 Internal Server Error: /static/css/detail.css/
+Traceback (most recent call last):
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/page_content/views.py", line 18, in view_web_page
+    community = Community.objects.get(slug=path)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/manager.py", line 92, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/query.py", line 357, in get
+    self.model._meta.object_name)
+DoesNotExist: Community matching query does not exist.
+ERROR 2018-12-07 12:40:28,140 base.py handle_uncaught_exception 231 Internal Server Error: /static/css/detail.css/
+Traceback (most recent call last):
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/page_content/views.py", line 18, in view_web_page
+    community = Community.objects.get(slug=path)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/manager.py", line 92, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/query.py", line 357, in get
+    self.model._meta.object_name)
+DoesNotExist: Community matching query does not exist.
+ERROR 2018-12-07 12:40:28,145 base.py handle_uncaught_exception 231 Internal Server Error: /static/css/front_overrides.css/
+Traceback (most recent call last):
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/page_content/views.py", line 18, in view_web_page
+    community = Community.objects.get(slug=path)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/manager.py", line 92, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/query.py", line 357, in get
+    self.model._meta.object_name)
+DoesNotExist: Community matching query does not exist.
+ERROR 2018-12-07 12:40:28,145 base.py handle_uncaught_exception 231 Internal Server Error: /static/css/front_overrides.css/
+Traceback (most recent call last):
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/page_content/views.py", line 18, in view_web_page
+    community = Community.objects.get(slug=path)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/manager.py", line 92, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/query.py", line 357, in get
+    self.model._meta.object_name)
+DoesNotExist: Community matching query does not exist.
+ERROR 2018-12-07 12:40:28,156 base.py handle_uncaught_exception 231 Internal Server Error: /static/js/menu.js/
+Traceback (most recent call last):
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/page_content/views.py", line 18, in view_web_page
+    community = Community.objects.get(slug=path)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/manager.py", line 92, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/query.py", line 357, in get
+    self.model._meta.object_name)
+DoesNotExist: Community matching query does not exist.
+ERROR 2018-12-07 12:40:28,156 base.py handle_uncaught_exception 231 Internal Server Error: /static/js/menu.js/
+Traceback (most recent call last):
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/page_content/views.py", line 18, in view_web_page
+    community = Community.objects.get(slug=path)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/manager.py", line 92, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/query.py", line 357, in get
+    self.model._meta.object_name)
+DoesNotExist: Community matching query does not exist.
+ERROR 2018-12-07 12:40:28,163 base.py handle_uncaught_exception 231 Internal Server Error: /static/css/chosen.min.css/
+Traceback (most recent call last):
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/page_content/views.py", line 18, in view_web_page
+    community = Community.objects.get(slug=path)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/manager.py", line 92, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/query.py", line 357, in get
+    self.model._meta.object_name)
+DoesNotExist: Community matching query does not exist.
+ERROR 2018-12-07 12:40:28,163 base.py handle_uncaught_exception 231 Internal Server Error: /static/css/chosen.min.css/
+Traceback (most recent call last):
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/page_content/views.py", line 18, in view_web_page
+    community = Community.objects.get(slug=path)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/manager.py", line 92, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/query.py", line 357, in get
+    self.model._meta.object_name)
+DoesNotExist: Community matching query does not exist.
+ERROR 2018-12-07 12:40:28,176 base.py handle_uncaught_exception 231 Internal Server Error: /static/js/user_actions.js/
+Traceback (most recent call last):
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/page_content/views.py", line 18, in view_web_page
+    community = Community.objects.get(slug=path)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/manager.py", line 92, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/query.py", line 357, in get
+    self.model._meta.object_name)
+DoesNotExist: Community matching query does not exist.
+ERROR 2018-12-07 12:40:28,176 base.py handle_uncaught_exception 231 Internal Server Error: /static/js/user_actions.js/
+Traceback (most recent call last):
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/page_content/views.py", line 18, in view_web_page
+    community = Community.objects.get(slug=path)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/manager.py", line 92, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/query.py", line 357, in get
+    self.model._meta.object_name)
+DoesNotExist: Community matching query does not exist.
+ERROR 2018-12-07 12:40:28,469 base.py handle_uncaught_exception 231 Internal Server Error: /static/js/ckeditor/ckeditor.js/
+Traceback (most recent call last):
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/page_content/views.py", line 18, in view_web_page
+    community = Community.objects.get(slug=path)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/manager.py", line 92, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/query.py", line 357, in get
+    self.model._meta.object_name)
+DoesNotExist: Community matching query does not exist.
+ERROR 2018-12-07 12:40:28,469 base.py handle_uncaught_exception 231 Internal Server Error: /static/js/ckeditor/ckeditor.js/
+Traceback (most recent call last):
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/page_content/views.py", line 18, in view_web_page
+    community = Community.objects.get(slug=path)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/manager.py", line 92, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/query.py", line 357, in get
+    self.model._meta.object_name)
+DoesNotExist: Community matching query does not exist.
+ERROR 2018-12-07 12:40:28,470 base.py handle_uncaught_exception 231 Internal Server Error: /static/js/chosen.jquery.min.js/
+Traceback (most recent call last):
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/page_content/views.py", line 18, in view_web_page
+    community = Community.objects.get(slug=path)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/manager.py", line 92, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/query.py", line 357, in get
+    self.model._meta.object_name)
+DoesNotExist: Community matching query does not exist.
+ERROR 2018-12-07 12:40:28,470 base.py handle_uncaught_exception 231 Internal Server Error: /static/js/chosen.jquery.min.js/
+Traceback (most recent call last):
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/page_content/views.py", line 18, in view_web_page
+    community = Community.objects.get(slug=path)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/manager.py", line 92, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/query.py", line 357, in get
+    self.model._meta.object_name)
+DoesNotExist: Community matching query does not exist.
+ERROR 2018-12-07 12:40:28,488 base.py handle_uncaught_exception 231 Internal Server Error: /static/images/portal_main_image.jpg/
+Traceback (most recent call last):
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/page_content/views.py", line 18, in view_web_page
+    community = Community.objects.get(slug=path)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/manager.py", line 92, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/query.py", line 357, in get
+    self.model._meta.object_name)
+DoesNotExist: Community matching query does not exist.
+ERROR 2018-12-07 12:40:28,488 base.py handle_uncaught_exception 231 Internal Server Error: /static/images/portal_main_image.jpg/
+Traceback (most recent call last):
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/page_content/views.py", line 18, in view_web_page
+    community = Community.objects.get(slug=path)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/manager.py", line 92, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/query.py", line 357, in get
+    self.model._meta.object_name)
+DoesNotExist: Community matching query does not exist.
+ERROR 2018-12-07 12:40:28,794 base.py handle_uncaught_exception 231 Internal Server Error: /static/css/detail.css/
+Traceback (most recent call last):
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/page_content/views.py", line 18, in view_web_page
+    community = Community.objects.get(slug=path)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/manager.py", line 92, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/query.py", line 357, in get
+    self.model._meta.object_name)
+DoesNotExist: Community matching query does not exist.
+ERROR 2018-12-07 12:40:28,794 base.py handle_uncaught_exception 231 Internal Server Error: /static/css/detail.css/
+Traceback (most recent call last):
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/page_content/views.py", line 18, in view_web_page
+    community = Community.objects.get(slug=path)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/manager.py", line 92, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/query.py", line 357, in get
+    self.model._meta.object_name)
+DoesNotExist: Community matching query does not exist.
+ERROR 2018-12-07 12:40:28,795 base.py handle_uncaught_exception 231 Internal Server Error: /static/css/chosen.min.css/
+Traceback (most recent call last):
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/page_content/views.py", line 18, in view_web_page
+    community = Community.objects.get(slug=path)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/manager.py", line 92, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/query.py", line 357, in get
+    self.model._meta.object_name)
+DoesNotExist: Community matching query does not exist.
+ERROR 2018-12-07 12:40:28,795 base.py handle_uncaught_exception 231 Internal Server Error: /static/css/chosen.min.css/
+Traceback (most recent call last):
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/page_content/views.py", line 18, in view_web_page
+    community = Community.objects.get(slug=path)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/manager.py", line 92, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/query.py", line 357, in get
+    self.model._meta.object_name)
+DoesNotExist: Community matching query does not exist.
+ERROR 2018-12-07 12:40:29,177 base.py handle_uncaught_exception 231 Internal Server Error: /static/images/favicon.ico/
+Traceback (most recent call last):
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/page_content/views.py", line 18, in view_web_page
+    community = Community.objects.get(slug=path)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/manager.py", line 92, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/query.py", line 357, in get
+    self.model._meta.object_name)
+DoesNotExist: Community matching query does not exist.
+ERROR 2018-12-07 12:40:29,177 base.py handle_uncaught_exception 231 Internal Server Error: /static/images/favicon.ico/
+Traceback (most recent call last):
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/page_content/views.py", line 18, in view_web_page
+    community = Community.objects.get(slug=path)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/manager.py", line 92, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/query.py", line 357, in get
+    self.model._meta.object_name)
+DoesNotExist: Community matching query does not exist.
+ERROR 2018-12-07 12:41:31,485 base.py handle_uncaught_exception 231 Internal Server Error: /static/css/base.css/
+Traceback (most recent call last):
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/page_content/views.py", line 18, in view_web_page
+    community = Community.objects.get(slug=path)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/manager.py", line 92, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/query.py", line 357, in get
+    self.model._meta.object_name)
+DoesNotExist: Community matching query does not exist.
+ERROR 2018-12-07 12:41:31,485 base.py handle_uncaught_exception 231 Internal Server Error: /static/css/base.css/
+Traceback (most recent call last):
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/page_content/views.py", line 18, in view_web_page
+    community = Community.objects.get(slug=path)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/manager.py", line 92, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/query.py", line 357, in get
+    self.model._meta.object_name)
+DoesNotExist: Community matching query does not exist.
+ERROR 2018-12-07 12:41:31,590 base.py handle_uncaught_exception 231 Internal Server Error: /static/css/portal.css/
+Traceback (most recent call last):
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/page_content/views.py", line 18, in view_web_page
+    community = Community.objects.get(slug=path)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/manager.py", line 92, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/query.py", line 357, in get
+    self.model._meta.object_name)
+DoesNotExist: Community matching query does not exist.
+ERROR 2018-12-07 12:41:31,590 base.py handle_uncaught_exception 231 Internal Server Error: /static/css/portal.css/
+Traceback (most recent call last):
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/page_content/views.py", line 18, in view_web_page
+    community = Community.objects.get(slug=path)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/manager.py", line 92, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/query.py", line 357, in get
+    self.model._meta.object_name)
+DoesNotExist: Community matching query does not exist.
+ERROR 2018-12-07 12:41:31,809 base.py handle_uncaught_exception 231 Internal Server Error: /static/css/detail.css/
+Traceback (most recent call last):
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/page_content/views.py", line 18, in view_web_page
+    community = Community.objects.get(slug=path)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/manager.py", line 92, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/query.py", line 357, in get
+    self.model._meta.object_name)
+DoesNotExist: Community matching query does not exist.
+ERROR 2018-12-07 12:41:31,809 base.py handle_uncaught_exception 231 Internal Server Error: /static/css/detail.css/
+Traceback (most recent call last):
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/page_content/views.py", line 18, in view_web_page
+    community = Community.objects.get(slug=path)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/manager.py", line 92, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/query.py", line 357, in get
+    self.model._meta.object_name)
+DoesNotExist: Community matching query does not exist.
+ERROR 2018-12-07 12:41:31,814 base.py handle_uncaught_exception 231 Internal Server Error: /static/css/front_overrides.css/
+Traceback (most recent call last):
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/page_content/views.py", line 18, in view_web_page
+    community = Community.objects.get(slug=path)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/manager.py", line 92, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/query.py", line 357, in get
+    self.model._meta.object_name)
+DoesNotExist: Community matching query does not exist.
+ERROR 2018-12-07 12:41:31,814 base.py handle_uncaught_exception 231 Internal Server Error: /static/css/front_overrides.css/
+Traceback (most recent call last):
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/page_content/views.py", line 18, in view_web_page
+    community = Community.objects.get(slug=path)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/manager.py", line 92, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/query.py", line 357, in get
+    self.model._meta.object_name)
+DoesNotExist: Community matching query does not exist.
+ERROR 2018-12-07 12:41:31,824 base.py handle_uncaught_exception 231 Internal Server Error: /static/js/user_actions.js/
+Traceback (most recent call last):
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/page_content/views.py", line 18, in view_web_page
+    community = Community.objects.get(slug=path)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/manager.py", line 92, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/query.py", line 357, in get
+    self.model._meta.object_name)
+DoesNotExist: Community matching query does not exist.
+ERROR 2018-12-07 12:41:31,824 base.py handle_uncaught_exception 231 Internal Server Error: /static/js/user_actions.js/
+Traceback (most recent call last):
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/page_content/views.py", line 18, in view_web_page
+    community = Community.objects.get(slug=path)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/manager.py", line 92, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/query.py", line 357, in get
+    self.model._meta.object_name)
+DoesNotExist: Community matching query does not exist.
+ERROR 2018-12-07 12:41:31,855 base.py handle_uncaught_exception 231 Internal Server Error: /static/css/chosen.min.css/
+Traceback (most recent call last):
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/page_content/views.py", line 18, in view_web_page
+    community = Community.objects.get(slug=path)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/manager.py", line 92, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/query.py", line 357, in get
+    self.model._meta.object_name)
+DoesNotExist: Community matching query does not exist.
+ERROR 2018-12-07 12:41:31,855 base.py handle_uncaught_exception 231 Internal Server Error: /static/css/chosen.min.css/
+Traceback (most recent call last):
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/page_content/views.py", line 18, in view_web_page
+    community = Community.objects.get(slug=path)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/manager.py", line 92, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/query.py", line 357, in get
+    self.model._meta.object_name)
+DoesNotExist: Community matching query does not exist.
+ERROR 2018-12-07 12:41:31,856 base.py handle_uncaught_exception 231 Internal Server Error: /static/js/menu.js/
+Traceback (most recent call last):
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/page_content/views.py", line 18, in view_web_page
+    community = Community.objects.get(slug=path)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/manager.py", line 92, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/query.py", line 357, in get
+    self.model._meta.object_name)
+DoesNotExist: Community matching query does not exist.
+ERROR 2018-12-07 12:41:31,856 base.py handle_uncaught_exception 231 Internal Server Error: /static/js/menu.js/
+Traceback (most recent call last):
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/page_content/views.py", line 18, in view_web_page
+    community = Community.objects.get(slug=path)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/manager.py", line 92, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/query.py", line 357, in get
+    self.model._meta.object_name)
+DoesNotExist: Community matching query does not exist.
+ERROR 2018-12-07 12:41:31,902 base.py handle_uncaught_exception 231 Internal Server Error: /static/js/ckeditor/ckeditor.js/
+Traceback (most recent call last):
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/page_content/views.py", line 18, in view_web_page
+    community = Community.objects.get(slug=path)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/manager.py", line 92, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/query.py", line 357, in get
+    self.model._meta.object_name)
+DoesNotExist: Community matching query does not exist.
+ERROR 2018-12-07 12:41:31,902 base.py handle_uncaught_exception 231 Internal Server Error: /static/js/ckeditor/ckeditor.js/
+Traceback (most recent call last):
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/page_content/views.py", line 18, in view_web_page
+    community = Community.objects.get(slug=path)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/manager.py", line 92, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/query.py", line 357, in get
+    self.model._meta.object_name)
+DoesNotExist: Community matching query does not exist.
+ERROR 2018-12-07 12:41:32,126 base.py handle_uncaught_exception 231 Internal Server Error: /static/js/chosen.jquery.min.js/
+Traceback (most recent call last):
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/page_content/views.py", line 18, in view_web_page
+    community = Community.objects.get(slug=path)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/manager.py", line 92, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/query.py", line 357, in get
+    self.model._meta.object_name)
+DoesNotExist: Community matching query does not exist.
+ERROR 2018-12-07 12:41:32,126 base.py handle_uncaught_exception 231 Internal Server Error: /static/js/chosen.jquery.min.js/
+Traceback (most recent call last):
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/page_content/views.py", line 18, in view_web_page
+    community = Community.objects.get(slug=path)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/manager.py", line 92, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/query.py", line 357, in get
+    self.model._meta.object_name)
+DoesNotExist: Community matching query does not exist.
+ERROR 2018-12-07 12:41:32,163 base.py handle_uncaught_exception 231 Internal Server Error: /static/js/user_actions.js/
+Traceback (most recent call last):
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/page_content/views.py", line 18, in view_web_page
+    community = Community.objects.get(slug=path)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/manager.py", line 92, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/query.py", line 357, in get
+    self.model._meta.object_name)
+DoesNotExist: Community matching query does not exist.
+ERROR 2018-12-07 12:41:32,163 base.py handle_uncaught_exception 231 Internal Server Error: /static/js/user_actions.js/
+Traceback (most recent call last):
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/page_content/views.py", line 18, in view_web_page
+    community = Community.objects.get(slug=path)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/manager.py", line 92, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/query.py", line 357, in get
+    self.model._meta.object_name)
+DoesNotExist: Community matching query does not exist.
+ERROR 2018-12-07 12:41:32,179 base.py handle_uncaught_exception 231 Internal Server Error: /static/images/portal_main_image.jpg/
+Traceback (most recent call last):
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/page_content/views.py", line 18, in view_web_page
+    community = Community.objects.get(slug=path)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/manager.py", line 92, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/query.py", line 357, in get
+    self.model._meta.object_name)
+DoesNotExist: Community matching query does not exist.
+ERROR 2018-12-07 12:41:32,179 base.py handle_uncaught_exception 231 Internal Server Error: /static/images/portal_main_image.jpg/
+Traceback (most recent call last):
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/page_content/views.py", line 18, in view_web_page
+    community = Community.objects.get(slug=path)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/manager.py", line 92, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/query.py", line 357, in get
+    self.model._meta.object_name)
+DoesNotExist: Community matching query does not exist.
+ERROR 2018-12-07 12:41:32,497 base.py handle_uncaught_exception 231 Internal Server Error: /static/js/ckeditor/ckeditor.js/
+Traceback (most recent call last):
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/page_content/views.py", line 18, in view_web_page
+    community = Community.objects.get(slug=path)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/manager.py", line 92, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/query.py", line 357, in get
+    self.model._meta.object_name)
+DoesNotExist: Community matching query does not exist.
+ERROR 2018-12-07 12:41:32,497 base.py handle_uncaught_exception 231 Internal Server Error: /static/js/ckeditor/ckeditor.js/
+Traceback (most recent call last):
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/page_content/views.py", line 18, in view_web_page
+    community = Community.objects.get(slug=path)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/manager.py", line 92, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/query.py", line 357, in get
+    self.model._meta.object_name)
+DoesNotExist: Community matching query does not exist.
+ERROR 2018-12-07 12:41:32,828 base.py handle_uncaught_exception 231 Internal Server Error: /static/css/detail.css/
+Traceback (most recent call last):
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/page_content/views.py", line 18, in view_web_page
+    community = Community.objects.get(slug=path)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/manager.py", line 92, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/query.py", line 357, in get
+    self.model._meta.object_name)
+DoesNotExist: Community matching query does not exist.
+ERROR 2018-12-07 12:41:32,828 base.py handle_uncaught_exception 231 Internal Server Error: /static/css/detail.css/
+Traceback (most recent call last):
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/page_content/views.py", line 18, in view_web_page
+    community = Community.objects.get(slug=path)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/manager.py", line 92, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/query.py", line 357, in get
+    self.model._meta.object_name)
+DoesNotExist: Community matching query does not exist.
+ERROR 2018-12-07 12:41:32,835 base.py handle_uncaught_exception 231 Internal Server Error: /static/css/chosen.min.css/
+Traceback (most recent call last):
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/page_content/views.py", line 18, in view_web_page
+    community = Community.objects.get(slug=path)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/manager.py", line 92, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/query.py", line 357, in get
+    self.model._meta.object_name)
+DoesNotExist: Community matching query does not exist.
+ERROR 2018-12-07 12:41:32,835 base.py handle_uncaught_exception 231 Internal Server Error: /static/css/chosen.min.css/
+Traceback (most recent call last):
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/page_content/views.py", line 18, in view_web_page
+    community = Community.objects.get(slug=path)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/manager.py", line 92, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/query.py", line 357, in get
+    self.model._meta.object_name)
+DoesNotExist: Community matching query does not exist.
+ERROR 2018-12-07 12:41:32,836 base.py handle_uncaught_exception 231 Internal Server Error: /static/js/chosen.jquery.min.js/
+Traceback (most recent call last):
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/page_content/views.py", line 18, in view_web_page
+    community = Community.objects.get(slug=path)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/manager.py", line 92, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/query.py", line 357, in get
+    self.model._meta.object_name)
+DoesNotExist: Community matching query does not exist.
+ERROR 2018-12-07 12:41:32,836 base.py handle_uncaught_exception 231 Internal Server Error: /static/js/chosen.jquery.min.js/
+Traceback (most recent call last):
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/page_content/views.py", line 18, in view_web_page
+    community = Community.objects.get(slug=path)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/manager.py", line 92, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/query.py", line 357, in get
+    self.model._meta.object_name)
+DoesNotExist: Community matching query does not exist.
+ERROR 2018-12-07 12:41:33,069 base.py handle_uncaught_exception 231 Internal Server Error: /static/images/favicon.ico/
+Traceback (most recent call last):
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/page_content/views.py", line 18, in view_web_page
+    community = Community.objects.get(slug=path)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/manager.py", line 92, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/query.py", line 357, in get
+    self.model._meta.object_name)
+DoesNotExist: Community matching query does not exist.
+ERROR 2018-12-07 12:41:33,069 base.py handle_uncaught_exception 231 Internal Server Error: /static/images/favicon.ico/
+Traceback (most recent call last):
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/page_content/views.py", line 18, in view_web_page
+    community = Community.objects.get(slug=path)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/manager.py", line 92, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/query.py", line 357, in get
+    self.model._meta.object_name)
+DoesNotExist: Community matching query does not exist.
+ERROR 2018-12-07 12:41:38,833 base.py handle_uncaught_exception 231 Internal Server Error: /static/images/favicon.ico/
+Traceback (most recent call last):
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/page_content/views.py", line 18, in view_web_page
+    community = Community.objects.get(slug=path)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/manager.py", line 92, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/query.py", line 357, in get
+    self.model._meta.object_name)
+DoesNotExist: Community matching query does not exist.
+ERROR 2018-12-07 12:41:38,833 base.py handle_uncaught_exception 231 Internal Server Error: /static/images/favicon.ico/
+Traceback (most recent call last):
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/page_content/views.py", line 18, in view_web_page
+    community = Community.objects.get(slug=path)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/manager.py", line 92, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/admin/Documents/Develop/Django/rcn/envdd/lib/python2.7/site-packages/django/db/models/query.py", line 357, in get
+    self.model._meta.object_name)
+DoesNotExist: Community matching query does not exist.
