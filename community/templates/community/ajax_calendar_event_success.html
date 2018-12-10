@@ -1,0 +1,14 @@
+<h2>{{ success_content.title }}</h2>
+
+<div class="success_details">
+    <div class="month">{{ event.start_date | date:'F' }}</div>
+    <div class="calendar_icon">{{ event.start_date | date:'j' }}</div>
+    <div class="inner_details">
+        <div class="title">{{ event.title }}</div>
+        <div class="time_block">{{ event.start_date | date:'f a' }} - {{ event.end_date | date:'f a' }}</div>
+        <div class="location">{{ event.location }}</div>
+    </div>
+    <div class="clear-both"></div>
+</div>
+
+<p>{{ success_content.message }}</p>

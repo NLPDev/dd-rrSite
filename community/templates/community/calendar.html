@@ -1,0 +1,51 @@
+{% extends 'detail_pages/2_col.html' %}
+{% load front_tags %}
+{% load staticfiles %}
+
+{% block extra-head %}
+    {{ block.super }}
+    <link type="text/css" rel="stylesheet" href="{% static "community/css/calendar.css" %}">
+{% endblock %}
+
+{% block body-id %}ng-app="realclear" id="ng-app"{% endblock %}
+
+{% block detail-content-left %}
+
+    <div ng-controller="CommunityCalendarCtrl">
+
+        <div calendar></div>
+
+        <a id="calendar_add_btn" class="btn info left_col_action" ng-click="open()">Add Event</a>
+
+    </div>
+
+{% endblock %}
+
+{% block detail-content-right %}
+
+    {% front_edit 'right-section-copy' page.id %}
+
+        <h1>What's Happening</h1>
+
+    {% end_front_edit %}
+
+    <div>
+        {% for event in events %}
+            <div class="event-wrapper">
+
+                {% ifchanged %}<h2 class="month">{{ event.start_date | date:'F' }}</h2>{% endifchanged %}
+                <div class="details">
+                    <div class="calendar_icon">{{ event.start_date | date:'j' }}</div>
+                    <div class="inner_details">
+                        <h2 class="title"><a href="{% url 'community:event_details' event.id %}">{{ event.title }}</a></h2>
+                        <div class="time_block">{{ event.start_date | date:'f a' }} - {{ event.end_date | date:'f a' }}</div>
+                        <div class="location">{{ event.location }}</div>
+                        <p>{{ event.description }}</p>
+                    </div>
+                </div>
+
+            </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}

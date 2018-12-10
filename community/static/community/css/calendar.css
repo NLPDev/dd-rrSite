@@ -1,0 +1,88 @@
+
+#content-wrapper #sections h1 {
+    margin-bottom: 40px;
+}
+
+#content-wrapper #sections .event-wrapper {
+    padding-top: 10px;
+}
+
+#content-wrapper #sections .event-wrapper h2.title {
+    margin-bottom: 5px;
+}
+
+#content-wrapper #sections .event-wrapper h2.title a {
+    text-transform: uppercase;
+    color: #80A0BD;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+#content-wrapper #sections .event-wrapper h2.title a:hover {
+    color: #97BEE4;
+}
+
+#content-wrapper #sections .event-wrapper .time {
+    color: #97BEE4;
+    font-size: 14px;
+    font-style: italic;
+    font-family: 'Merriweather', Georgia, serif;
+    line-height: 22px;
+}
+
+#content-wrapper #sections .event-wrapper .time_block {
+    color: #617286;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-family: 'Merriweather', Georgia, serif;
+    font-weight: 400;
+    margin-bottom: 2px;
+}
+
+#content-wrapper #sections .event-wrapper h2.month {
+    margin-bottom: 30px;
+    clear: both;
+}
+
+#content-wrapper #sections .event-wrapper .cancel {
+    color: #BCC0C3;
+    font-size: 14px;
+    font-style: italic;
+    font-family: 'Merriweather', Georgia, serif;
+    line-height: 22px;
+    display: block;
+    clear: both;
+}
+
+#content-wrapper #sections .event-wrapper .details {
+    margin-top: 20px;
+}
+
+#content-wrapper #sections .event-wrapper .calendar_icon {
+    width: 60px;
+    height: 60px;
+    float: left;
+    text-align: center;
+    line-height: 77px;
+    background-image: url('/static/images/calendar_icon.png');
+    font-size: 18px;
+    margin: 0 20px 10px 0;
+}
+
+#content-wrapper #sections .event-wrapper h2 {
+    margin-bottom: 0;
+}
+
+#content-wrapper #sections .event-wrapper .location {
+    color: #97BEE4;
+    font-size: 14px;
+    font-style: italic;
+    font-family: 'Merriweather', Georgia, serif;
+    line-height: 22px;
+    margin-bottom: 20px;
+}
+
+
+#content-wrapper #sections .event-wrapper .details p {
+    margin-left: 80px;
+}

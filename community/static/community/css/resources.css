@@ -1,0 +1,26 @@
+
+#content-wrapper #sections .resources_block {
+    padding-left: 140px;
+    clear: both;
+    margin-bottom: 80px;
+}
+
+
+#content-wrapper #sections .resources_block a.btn {
+    float: left;
+}
+
+#content-wrapper #sections #resources_documents.resources_block {
+    background-image: url('/media/uploads/mini_billboards/community_resources_fb_thumb.png');
+    background-repeat: no-repeat;
+}
+
+#content-wrapper #sections #resources_common_areas.resources_block {
+    background-image: url('/media/uploads/mini_billboards/association_management_fb_thumb.png');
+    background-repeat: no-repeat;
+}
+
+#content-wrapper #sections #resources_services.resources_block {
+    background-image: url('/media/uploads/mini_billboards/recommended_services_fb_thumb.png');
+    background-repeat: no-repeat;
+}

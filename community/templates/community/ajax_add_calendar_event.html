@@ -1,0 +1,86 @@
+<form id="calendar_event_form" class="form-horizontal" action="#" method="post">
+
+    {% csrf_token %}
+
+    {{ calendar_event_form.non_field_errors }}
+
+    <div class="col-xs-12 col-sm-12 col-md-12">
+        {{ calendar_event_form.title.errors }}
+        {{ calendar_event_form.title.label_tag }}
+        {{ calendar_event_form.title }}
+    </div>
+
+    <div class="col-xs-12 col-sm-12 col-md-12">
+        {{ calendar_event_form.location.errors }}
+        {{ calendar_event_form.location.label_tag }}
+        {{ calendar_event_form.location }}
+    </div>
+
+    <div class="col-md-12">
+        <label>Choose date</label>
+        <div datepicker></div>
+    </div>
+
+    <div class="col-xs-12 col-sm-12 col-md-6">
+        {{ calendar_event_form.start_date.errors }}
+        {{ calendar_event_form.start_date.label_tag }}
+        {{ calendar_event_form.start_date }}
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-6">
+        {{ calendar_event_form.end_date.errors }}
+        {{ calendar_event_form.end_date.label_tag }}
+        {{ calendar_event_form.end_date }}
+    </div>
+
+    <div class="col-xs-12 col-sm-12 col-md-12">
+        {{ calendar_event_form.description.errors }}
+        {{ calendar_event_form.description.label_tag }}
+        {{ calendar_event_form.description }}
+    </div>
+
+    <div class="image_upload col-xs-12 col-sm-12 col-md-12">
+
+        <div class="col-xs-12 col-sm-12 col-md-6">
+            {{ event_photo_form.photo.errors }}
+            <label for="id_photo">Upload Photo</label>
+            <div class="image_preview"></div>
+        </div>
+
+        <div class="col-xs-12 col-sm-12 col-md-6">
+            <label>&nbsp;</label>
+            <input id="id_photo" name="image_file" type="file" onchange="addAnotherImageUpload(this);previewFile(this);">
+            <input type="text" class="file-input" name="image_filename" placeholder="No file selected" readonly>
+            <a id="file-trigger" class="btn info" onclick="triggerUpload(this);">Upload Picture</a>
+        </div>
+
+    </div>
+
+    <div class="col-xs-12 col-sm-12 col-md-12">
+        <h2>Contact Information</h2>
+    </div>
+
+    <div class="col-xs-12 col-sm-12 col-md-12">
+        {{ calendar_event_form.first_name.errors }}
+        {{ calendar_event_form.first_name.label_tag }}
+        {{ calendar_event_form.first_name }}
+    </div>
+
+    <div class="col-xs-12 col-sm-12 col-md-12">
+        {{ calendar_event_form.last_name.errors }}
+        {{ calendar_event_form.last_name.label_tag }}
+        {{ calendar_event_form.last_name }}
+    </div>
+
+    <div class="col-xs-12 col-sm-12 col-md-12">
+        {{ calendar_event_form.phone.errors }}
+        {{ calendar_event_form.phone.label_tag }}
+        {{ calendar_event_form.phone }}
+    </div>
+
+    <div class="col-xs-12 col-sm-12 col-md-12">
+        {{ calendar_event_form.email.errors }}
+        {{ calendar_event_form.email.label_tag }}
+        {{ calendar_event_form.email }}
+    </div>
+
+</form>

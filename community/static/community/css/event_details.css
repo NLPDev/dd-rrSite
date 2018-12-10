@@ -1,0 +1,39 @@
+
+#content-wrapper #sections h1 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+#content-wrapper #sections p.event_location {
+    font-style: italic;
+    color: #97BEE4;
+    font-size: 14px;
+    font-family: 'Merriweather', Georgia, serif;
+    line-height: 1.8em;
+    margin-bottom: 15px;
+}
+
+#content-wrapper #sections div.event_contact_info {
+    font-style: italic;
+    font-size: 14px;
+    font-family: 'Merriweather', Georgia, serif;
+    line-height: 1.8em;
+}
+
+
+#content-wrapper #sections div.event_contact_info .contact_name {
+    color: #97BEE4;
+}
+
+#content-wrapper #sections .time_block {
+    color: #617286;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-family: 'Merriweather', Georgia, serif;
+    font-weight: 400;
+    margin-bottom: 2px;
+}
+
+#content-wrapper a.image-popup.image-size-sm img {
+    margin: 10px 4px 0 0;
+}

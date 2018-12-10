@@ -1,0 +1,46 @@
+{% extends 'detail_pages/2_col.html' %}
+{% load staticfiles %}
+{% load thumbnail %}
+
+{% block extra-head %}
+    {{ block.super }}
+    <link type="text/css" rel="stylesheet" href="{% static "community/css/event_details.css" %}">
+{% endblock %}
+
+{% block body-id %}ng-app="realclear" id="ng-app"{% endblock %}
+
+{% block detail-content-left %}
+
+    <div ng-controller="CalendarEventDetailsCtrl">
+        {% if photos %}
+            {% for photo in photos %}
+                {% if forloop.first %}
+                    <a class="image-popup" ng-click="open('{% thumbnail photo.photo 950x900 %}')"><img src="{% thumbnail photo.photo 452x800 upscale %}" alt="" /></a>
+                {% else %}
+                    <a class="image-popup image-size-sm" ng-click="open('{% thumbnail photo.photo 950x900 %}')"><img src="{% thumbnail photo.photo 145x145 crop %}" alt="" /></a>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+    </div>
+
+{% endblock %}
+
+{% block detail-content-right %}
+
+    <h1>{{ event.start_date | date:'n/j/y' }} {{ event.title }}</h1>
+    <div class="time_block">{{ event.start_date | date:'f a' }} - {{ event.end_date | date:'f a' }}</div>
+    <p class="event_location">{{ event.location }}</p>
+
+    <p>
+        {{ event.description }}
+    </p>
+
+    <h2>For more info contact:</h2>
+
+    <div class="event_contact_info">
+        <span class="contact_name">{{ event.first_name }} {{ event.last_name }}</span><br />
+        {{ event.phone }}<br />
+        {{ event.email }}<br />
+    </div>
+
+{% endblock %}

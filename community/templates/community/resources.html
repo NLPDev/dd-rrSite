@@ -1,0 +1,71 @@
+{% extends 'detail_pages/2_col_equal.html' %}
+{% load front_tags %}
+{% load staticfiles %}
+
+{% block extra-head %}
+    {{ block.super }}
+    <link type="text/css" rel="stylesheet" href="{% static "community/css/resources.css" %}">
+{% endblock %}
+
+{% block detail-content-left %}
+
+    <div id="resources_documents" class="resources_block">
+        {% front_edit 'resources-documents-copy' page.id %}
+
+            <h2>Community Documents</h2>
+
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                voluptate velit esse cillum dolore eu fugiat
+            </p>
+
+        {% end_front_edit %}
+
+        <a class="btn info" href="{% url 'community:documents' %}">See More</a>
+        <div class="clear-both"></div>
+    </div>
+
+    <div id="resources_common_areas" class="resources_block">
+        {% front_edit 'resources-common-areas-copy' page.id %}
+
+            <h2>Reserve Common Area</h2>
+
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                voluptate velit esse cillum dolore eu fugiat
+            </p>
+
+        {% end_front_edit %}
+
+        <a class="btn info" href="{% url 'reservation:common_areas' %}">See More</a>
+        <div class="clear-both"></div>
+    </div>
+
+
+{% endblock %}
+
+{% block detail-content-right %}
+
+    <div id="resources_services" class="resources_block">
+        {% front_edit 'resources-services-copy' page.id %}
+
+            <h2>Recommended Services</h2>
+
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                voluptate velit esse cillum dolore eu fugiat
+            </p>
+
+        {% end_front_edit %}
+
+        <a class="btn info" href="{% url 'service_provider:service_provider_index' %}">See More</a>
+        <div class="clear-both"></div>
+    </div>
+
+{% endblock %}
