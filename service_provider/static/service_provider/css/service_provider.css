@@ -1,0 +1,54 @@
+
+#service_provider_add_btn {
+    float: left;
+}
+
+.modal input#id_facebook,
+.modal input#id_twitter,
+.modal input#id_linkedin,
+.modal input#id_google_plus {
+    width: 198px;
+    margin-left: 6px;
+}
+
+#content-wrapper #sections div.service_provider_item {
+    clear: both;
+    margin-top: 60px;
+}
+
+#content-wrapper #sections div.service_provider_item h2 {
+    margin-bottom: 0;
+}
+
+#content-wrapper #sections div.service_provider_item .service_type {
+    color: #97BEE4;
+    font-size: 14px;
+    font-style: italic;
+    font-family: 'Merriweather', Georgia, serif;
+    margin-bottom: 20px;
+}
+
+#content-wrapper #sections div.service_provider_item .service_contact {
+    font-size: 16px;
+    font-style: italic;
+    font-family: 'Merriweather', Georgia, serif;
+    margin-top: 5px;
+}
+
+#content-wrapper #sections div.service_provider_item .service_contact span {
+    font-size: 16px;
+    line-height: 1.4em;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #7E9DBD;
+    font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+    font-style: normal;
+}
+
+#content-wrapper #sections div.service_provider_item .service_social_icons {
+    margin: 20px 0;
+}
+
+#content-wrapper #sections #right-section-copy .section-copy .service_provider_item:first-child {
+    margin-top: 0;
+}

@@ -1,0 +1,70 @@
+{% extends 'detail_pages/2_col_equal.html' %}
+{% load front_tags %}
+{% load staticfiles %}
+
+{% block extra-head %}
+    {{ block.super }}
+    <link type="text/css" rel="stylesheet" href="{% static "service_provider/css/service_provider.css" %}">
+{% endblock %}
+
+{% block body-id %}ng-app="realclear" id="ng-app"{% endblock %}
+
+{% block detail-content-left %}
+
+    {% front_edit 'right-section-copy' page.id %}
+
+        <h2>Have a service to provide?</h2>
+
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+            voluptate velit esse cillum dolore eu fugiat
+        </p>
+
+    {% end_front_edit %}
+
+    <div ng-controller="ServiceProviderCtrl">
+        <a id="service_provider_add_btn" class="btn info" ng-click="open()">Add Service</a>
+        <div class="clear-both"></div>
+    </div>
+
+    {% for service in left_services %}
+        <div class="service_provider_item">
+            <h2>{{ service.title }}</h2>
+            <div class="service_type">{{ service.type }}</div>
+            {% if service.phone %}<div class="service_contact"><span>Phone:</span> {{ service.phone }}</div>{% endif %}
+            {% if service.email %}<div class="service_contact"><span>Email:</span> {{ service.email }}</div>{% endif %}
+            {% if service.website %}<div class="service_contact"><span>Web:</span> {{ service.website }}</div>{% endif %}
+            <div class="service_social_icons">
+                {% if service.facebook %}<a href="{{ service.facebook }}" target="_blank"><img src="{% static 'images/social/facebook.png' %}" alt="facebook" title="facebook" width="45" height="45" /></a>{% endif %}
+                {% if service.twitter %}<a href="{{ service.twitter }}" target="_blank"><img src="{% static 'images/social/twitter.png' %}" alt="twitter" title="twitter" width="45" height="45" /></a>{% endif %}
+                {% if service.linkedin %}<a href="{{ service.linkedin }}" target="_blank"><img src="{% static 'images/social/linkedin.png' %}" alt="linkedin" title="linkedin" width="45" height="45" /></a>{% endif %}
+                {% if service.google_plus %}<a href="{{ service.google_plus }}" target="_blank"><img src="{% static 'images/social/googleplus.png' %}" alt="google_plus" title="google_plus" width="45" height="45" /></a>{% endif %}
+            </div>
+            <p>{{ service.description }}</p>
+        </div>
+    {% endfor %}
+
+{% endblock %}
+
+{% block detail-content-right %}
+
+    {% for service in right_services %}
+        <div class="service_provider_item">
+            <h2>{{ service.title }}</h2>
+            <div class="service_type">{{ service.type }}</div>
+            {% if service.phone %}<div class="service_contact"><span>Phone:</span> {{ service.phone }}</div>{% endif %}
+            {% if service.email %}<div class="service_contact"><span>Email:</span> {{ service.email }}</div>{% endif %}
+            {% if service.website %}<div class="service_contact"><span>Web:</span> {{ service.website }}</div>{% endif %}
+            <div class="service_social_icons">
+                {% if service.facebook %}<a href="{{ service.facebook }}" target="_blank"><img src="{% static 'images/social/facebook.png' %}" alt="facebook" title="facebook" width="45" height="45" /></a>{% endif %}
+                {% if service.twitter %}<a href="{{ service.twitter }}" target="_blank"><img src="{% static 'images/social/twitter.png' %}" alt="twitter" title="twitter" width="45" height="45" /></a>{% endif %}
+                {% if service.linkedin %}<a href="{{ service.linkedin }}" target="_blank"><img src="{% static 'images/social/linkedin.png' %}" alt="linkedin" title="linkedin" width="45" height="45" /></a>{% endif %}
+                {% if service.google_plus %}<a href="{{ service.google_plus }}" target="_blank"><img src="{% static 'images/social/googleplus.png' %}" alt="google_plus" title="google_plus" width="45" height="45" /></a>{% endif %}
+            </div>
+            <p>{{ service.description }}</p>
+        </div>
+    {% endfor %}
+
+{% endblock %}

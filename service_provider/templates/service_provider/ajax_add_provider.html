@@ -1,0 +1,67 @@
+{% load staticfiles %}
+
+<form id="service_provider_form" class="form-horizontal" action="#" method="post">
+
+    {% csrf_token %}
+
+    {{ form.non_field_errors }}
+
+    <div class="col-xs-12 col-sm-12 col-md-12">
+        {{ form.title.errors }}
+        {{ form.title.label_tag }}
+        {{ form.title }}
+    </div>
+
+    <div class="col-xs-12 col-sm-12 col-md-12">
+        {{ form.type.errors }}
+        {{ form.type.label_tag }}
+        {{ form.type }}
+    </div>
+
+    <div class="col-xs-12 col-sm-12 col-md-12">
+        {{ form.phone.errors }}
+        {{ form.phone.label_tag }}
+        {{ form.phone }}
+    </div>
+
+    <div class="col-xs-12 col-sm-12 col-md-12">
+        {{ form.email.errors }}
+        {{ form.email.label_tag }}
+        {{ form.email }}
+    </div>
+
+    <div class="col-xs-12 col-sm-12 col-md-12">
+        {{ form.website.errors }}
+        {{ form.website.label_tag }}
+        {{ form.website }}
+    </div>
+
+    <div class="col-xs-12 col-sm-12 col-md-6">
+        {{ form.facebook.errors }}
+        <img src="{% static 'images/social/facebook.png' %}" alt="facebook" title="facebook" width="45" height="45" />
+        {{ form.facebook }}
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-6">
+        {{ form.twitter.errors }}
+        <img src="{% static 'images/social/twitter.png' %}" alt="twitter" title="twitter" width="45" height="45" />
+        {{ form.twitter }}
+    </div>
+
+    <div class="col-xs-12 col-sm-12 col-md-6">
+        {{ form.linkedin.errors }}
+        <img src="{% static 'images/social/linkedin.png' %}" alt="linkedin" title="linkedin" width="45" height="45" />
+        {{ form.linkedin }}
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-6">
+        {{ form.google_plus.errors }}
+        <img src="{% static 'images/social/googleplus.png' %}" alt="google-plus" title="google-plus" width="45" height="45" />
+        {{ form.google_plus }}
+    </div>
+
+    <div class="col-xs-12 col-sm-12 col-md-12">
+        {{ form.description.errors }}
+        {{ form.description.label_tag }}
+        {{ form.description }}
+    </div>
+
+</form>
