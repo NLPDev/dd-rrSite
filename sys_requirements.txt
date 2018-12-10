@@ -1,0 +1,2 @@
+python-psycopg2
+rabbitmq-server
