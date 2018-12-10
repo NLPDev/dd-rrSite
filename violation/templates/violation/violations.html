@@ -1,0 +1,130 @@
+{% extends 'detail_pages/2_col.html' %}
+{% load front_tags %}
+{% load staticfiles %}
+
+{% block extra-head %}
+    {{ block.super }}
+    <link type="text/css" rel="stylesheet" href="{% static "violation/css/violation.css" %}">
+{% endblock %}
+
+{% block body-id %}ng-app="realclear" id="ng-app"{% endblock %}
+
+{% block detail-content-left %}
+
+    <div id="small-contact-form">
+        <div class="title-wrapper">
+            <h2>Report Violation</h2>
+        </div>
+
+        <div ng-controller="ViolationCtrl" class="col-md-12">
+
+            <form id="violation_form" class="form-horizontal" method="post">
+
+                {% csrf_token %}
+
+                {{ violation_form.non_field_errors }}
+
+                <div class="col-md-12">
+                    {{ violation_form.violator_address.errors }}
+                    {{ violation_form.violator_address.label_tag }}
+                    {{ violation_form.violator_address }}
+                </div>
+
+                <div class="col-md-12">
+                    {{ violation_form.violation.errors }}
+                    {{ violation_form.violation.label_tag }}
+                    {{ violation_form.violation }}
+                </div>
+
+                <div class="col-md-12">
+                    {{ violation_form.event_date_not_relevant.errors }}
+                    <label>{{ violation_form.event_date_not_relevant.label }}</label>
+                    <div class="not_relevant_container">
+                        <label>{{ violation_form.event_date_not_relevant }} <span>Not Relevant</span></label>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-12 col-md-6">
+                    {{ violation_form.event_month.errors }}
+                    {{ violation_form.event_month.label_tag }}
+                    {{ violation_form.event_month }}
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-6">
+                    {{ violation_form.event_day.errors }}
+                    {{ violation_form.event_day.label_tag }}
+                    {{ violation_form.event_day }}
+                </div>
+
+                <div class="col-xs-12 col-sm-12 col-md-6">
+                    {{ violation_form.event_start.errors }}
+                    {{ violation_form.event_start.label_tag }}
+                    {{ violation_form.event_start }}
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-6">
+                    {{ violation_form.event_end.errors }}
+                    {{ violation_form.event_end.label_tag }}
+                    {{ violation_form.event_end }}
+                </div>
+
+                <div class="col-md-12">
+                    {{ violation_form.message.errors }}
+                    {{ violation_form.message.label_tag }}
+                    {{ violation_form.message }}
+                </div>
+
+                <div class="col-md-12">
+                    <a id="violation_add_btn" class="btn info" ng-click="process()">Report</a>
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block detail-content-right %}
+
+    {% front_edit 'right-section-copy' page.id %}
+
+        <h1>Violations</h1>
+
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+            voluptate velit esse cillum dolore eu fugiat
+        </p>
+
+    {% end_front_edit %}
+
+    <h2>Steps for reporting violations</h2>
+
+    <ol>
+    {% for step in violation_steps %}
+        <li>
+            <div class="round_number">{{ forloop.counter }}</div>
+            {{ step.message }}
+        </li>
+    {% endfor %}
+    </ol>
+
+    <div class="violation_steps_conclusion">
+        {% front_edit 'violation_conclusion' %}
+            If you cannot find a violation, or have a special situation, please call us with further information. We
+            are always happy to help.
+        {% end_front_edit %}
+    </div>
+
+    <h2>Most frequently reported violations</h2>
+
+    <ol>
+    {% for step in violation_faqs %}
+        <li>
+            <div class="round_number">{{ forloop.counter }}</div>
+            {{ step.message }}
+        </li>
+    {% endfor %}
+    </ol>
+
+{% endblock %}
