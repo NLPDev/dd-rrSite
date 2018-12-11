@@ -1,0 +1,72 @@
+{% extends 'detail_pages/2_col_equal.html' %}
+{% load front_tags %}
+{% load staticfiles %}
+{% load humanize %}
+
+{% block extra-head %}
+    {{ block.super }}
+    <link type="text/css" rel="stylesheet" href="{% static "contact/css/contact.css" %}">
+{% endblock %}
+
+{% block detail-content-left %}
+
+    {% front_edit 'left-section-copy' page.id %}
+
+        <h1>Talk To Us</h1>
+
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+            voluptate velit esse cillum dolore eu fugiat
+        </p>
+
+    {% end_front_edit %}
+
+
+    <div id="small-contact-form">
+        <div class="title-wrapper">
+            <h2>Quick Question</h2>
+        </div>
+
+        <div class="col-md-12">
+
+            {% if not message %}
+            <form id="contact_form" class="form-horizontal" method="post">
+
+                {% csrf_token %}
+
+                {{ contact_form }}
+
+                <div class="col-md-12">
+                    <a class="btn info" onclick="$('#contact_form').submit();">Submit</a>
+                </div>
+
+            </form>
+            {% else %}
+            <div>
+                Thank you for your message. We will review it shortly.
+            </div>
+            {% endif %}
+
+        </div>
+    </div>
+
+
+{% endblock %}
+
+{% block detail-content-right %}
+
+    {% front_edit 'right-section-copy' page.id %}
+
+        <h2>Location</h2>
+
+        <p>Lorem ipsum</p>
+
+        <h2>Contact Info</h2>
+
+        <p>Lorem ipsum</p>
+
+    {% end_front_edit %}
+
+{% endblock %}

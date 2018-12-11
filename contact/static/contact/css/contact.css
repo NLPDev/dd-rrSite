@@ -1,0 +1,36 @@
+
+
+#contact_form ul.errorlist {
+    list-style: none;
+}
+
+#contact_form ul.errorlist li {
+  color: #dd433e;
+  font-family: 'Merriweather', Georgia, serif;
+  font-size: 16px;
+  font-weight: 400;
+  font-style: italic;
+  margin-bottom: 5px;
+}
+
+#id_preferred_method {
+    list-style: none;
+    padding: 20px 0 0 0;
+}
+
+#id_preferred_method li {
+    float: left;
+    margin-right: 40px;
+    padding-bottom: 14px;
+}
+
+#content-wrapper #small-contact-form #contact_form input[type=radio] {
+    width: auto;
+    height: auto;
+    margin: 0 6px 0 0;
+}
+
+#contact_form > label {
+    display: block;
+    clear:both;
+}
