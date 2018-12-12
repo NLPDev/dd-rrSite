@@ -1,0 +1,32 @@
+from django.conf import settings
+from django.db.models.signals import post_save
+from django.dispatch import receiver
+
+from external_services.services.mailchimp import RCNMailChimp
+from neighbor.models import Neighbor
+from . import tasks
+
+
+<<<<<<< HEAD
+@receiver(post_save, sender=Neighbor)
+def mail_chimp(sender, instance, created, **kwargs):
+    RCNMailChimp(instance=instance)
+
+@receiver(post_save, sender=Neighbor)
+def salesforceiq(sender, instance, created, **kwargs):
+    update_fields = kwargs['update_fields'] or []
+    if settings.SALESFORCEIQ and 'salesforceiq_id' not in update_fields:
+        tasks.salesforceiq_save_contact.apply_async(
+            kwargs={'neighbor':instance}, countdown=120,
+        )
+=======
+@receiver(post_save, sender=Neighbor, dispatch_uid="mailchimp_save")
+def mail_chimp(sender, instance, created, **kwargs):
+    update_fields = kwargs['update_fields'] or []
+    if 'mailchimp_subscriber_id' in update_fields:
+        pass
+    elif instance.community:
+        RCNMailChimp(instance=instance)
+    else:
+        pass
+>>>>>>> 90e9a36157ef05e1857ea885bc0088ecb5a7378c
