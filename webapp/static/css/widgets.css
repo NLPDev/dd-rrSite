@@ -1,0 +1,484 @@
+
+/*========== MODAL ==========*/
+.modal .modal-header {
+    background-color: #7e9dbc;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    border: none;
+    margin-bottom: 35px;
+}
+
+.modal .modal-header h1 {
+    font-size: 35px;
+}
+
+.modal .modal-header .close {
+    color: #FFFFFF;
+    filter: alpha(opacity=60);
+    opacity: .6;
+}
+
+.modal .modal-header h1.center {
+    text-align: center;
+}
+
+.modal .modal-content {
+    border-radius: 3px;
+    background-color: #ECF0F1;
+}
+
+.modal .modal-content h2 {
+    font-size: 20px;
+    line-height: 1.4em;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #7E9DBD;
+    margin-bottom: 10px;
+}
+
+.modal .modal-content p {
+    font-style: italic;
+    font-family: 'Merriweather', Georgia, serif;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.8em;
+}
+
+.modal .modal-content div.text-center {
+    margin: 0 40px;
+}
+
+.modal .modal-content input,
+.modal .modal-content textarea,
+.modal .modal-content select {
+    border: none;
+    width: 100%;
+    background-color: #FFFFFF;
+    margin-bottom: 26px;
+}
+
+.modal .modal-content input,
+.modal .modal-content select {
+    height: 45px;
+    padding: 0 10px;
+}
+
+.modal .modal-content .modal-body.center {
+    text-align: center;
+    margin: 0 15px;
+}
+
+.modal .modal-footer {
+    border: none;
+    text-align: center;
+}
+
+.modal .modal-footer .btn {
+    float: right;
+    margin: 0 15px 15px 15px;
+    font-weight: 400;
+    display: inline-block;
+}
+
+.modal .modal-footer .btn.center {
+    float: none;
+}
+
+.modal .modal-footer .btn.hide {
+    display: none;
+}
+
+.modal #id_related_service_choices {
+    list-style: none;
+    margin-left: 16%;
+}
+
+.modal form label {
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+.modal .hasDatepicker {
+    margin-bottom: 30px;
+}
+
+.modal ul.errorlist {
+    list-style: none;
+}
+
+.modal ul.errorlist li {
+    color: #dd433e;
+    font-family: 'Merriweather', Georgia, serif;
+    font-size: 16px;
+    font-weight: 400;
+    font-style: italic;
+    margin-bottom: 5px;
+}
+
+.modal ul.errorlist li ul.errorlist {
+    margin: 4px 0 12px 20px;
+}
+
+.modal .modal-body .success_details {
+    text-align: left;
+    width: 400px;
+    margin: 30px auto;
+}
+
+.modal .modal-body .success_details .month {
+    clear:both;
+    text-transform: uppercase;
+    color: #80A0BD;
+    font-weight: 700;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.modal .modal-body .success_details .title {
+    text-transform: uppercase;
+    color: #80A0BD;
+    font-weight: 700;
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.modal .modal-body .success_details .time_block {
+    color: #617286;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-family: 'Merriweather', Georgia, serif;
+    font-weight: 400;
+    margin-bottom: 2px;
+}
+
+.modal .modal-body .success_details .location {
+    color: #97BEE4;
+    font-size: 14px;
+    font-style: italic;
+    font-family: 'Merriweather', Georgia, serif;
+    line-height: 22px;
+}
+
+.modal .modal-body .success_details .calendar_icon {
+    width: 60px;
+    height: 60px;
+    float: left;
+    text-align: center;
+    line-height: 77px;
+    background-image: url('/static/images/calendar_icon.png');
+    font-size: 18px;
+    margin: 0 20px 10px 0;
+}
+
+/* image uploading */
+
+.modal input[type=file] {
+    display: none;
+}
+
+.modal .image_upload div:first-child {
+    padding-left: 0;
+}
+.modal .image_upload div:last-child {
+    padding-right: 0;
+}
+
+.modal .image_upload div.image_preview {
+    width: 100%;
+    height: 254px;
+    text-align: center;
+    line-height: 257px;
+    background-color: #FFFFFF;
+    margin-bottom: 26px;
+    overflow: hidden;
+}
+
+.modal .image_upload div.image_preview img {
+    width: 100%;
+}
+
+.modal .image_upload div.image_preview img.loading_icon {
+    width: auto;
+}
+
+.modal .image_modal {
+    min-height: 200px;
+    text-align: center;
+    position: relative;
+    line-height: 203px;
+}
+
+.modal .image_modal .close {
+    color: #80A0BD;
+    background-color: #FFFFFF;
+    filter: alpha(opacity=80);
+    opacity: .8;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 8px 8px 0 0;
+    border-radius: 15px;
+    width: 27px;
+    padding: 6px 0 5px 0;
+    line-height: 14px;
+}
+
+.image-modal-window {
+    text-align: center;
+}
+
+.image-modal-window .modal-dialog {
+    width: auto;
+    display: inline-block;
+    min-width: 200px;
+}
+
+.image-modal-window img.modal_gallery_image {
+    cursor: pointer;
+}
+
+/*==
+RESPONSIVENESS
+==*/
+@media (max-width: 991px) {
+
+    .modal .image_upload div {
+        padding: 0;
+    }
+
+    .modal .image_upload a.btn {
+        margin-bottom: 20px;
+    }
+
+}
+/*==
+END RESPONSIVENESS
+==*/
+
+/*========== END MODAL ==========*/
+
+/*========== CALENDAR ==========*/
+.ui-widget {
+	font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.hasDatepicker .ui-datepicker {
+    width: 100%;
+    padding: 0;
+}
+
+
+.hasDatepicker .ui-widget-content {
+    border:none;
+    background-image: none;
+    padding-bottom: 30px;
+}
+
+.hasDatepicker .ui-widget-header {
+    border:none;
+    background-image: none;
+    background-color: #7e9dbc;
+    color: #FFFFFF;
+    border-radius: 0;
+    height: 75px;
+    padding: 0;
+    font-weight: normal;
+}
+
+.hasDatepicker .ui-widget-header .ui-datepicker-title {
+    line-height: 78px;
+    margin: 0;
+    text-align: left;
+    padding-left: 34px;
+    font-weight: 400;
+    font-size: 22px;
+    text-transform: uppercase;
+}
+
+.hasDatepicker .ui-widget-header .ui-icon {
+    text-indent: 0;
+    width: auto;
+    height: auto;
+    background-image: none;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+.hasDatepicker .ui-datepicker .ui-datepicker-prev span,
+.hasDatepicker .ui-datepicker .ui-datepicker-next span {
+    position:static;
+    top: 0;
+    left: 0;
+    margin: 0;
+}
+
+.hasDatepicker .ui-widget-header .ui-datepicker-next,
+.hasDatepicker .ui-widget-header .ui-datepicker-prev {
+    width: auto;
+    height: auto;
+    position: relative;
+    float: right;
+    top: 35px;
+    border: none;
+}
+
+.hasDatepicker .ui-widget-header .ui-datepicker-next {
+    left: 10px;
+}
+
+.hasDatepicker .ui-widget-header .ui-datepicker-prev {
+    left: -70px;
+}
+
+
+.hasDatepicker .ui-widget-header .ui-datepicker-prev .ui-icon:after {
+    content: ' /';
+}
+
+
+#content-wrapper #sections .hasDatepicker .ui-widget-content .ui-widget-header a.ui-state-hover,
+.modal-content .hasDatepicker .ui-widget-content .ui-widget-header a.ui-state-hover {
+    background-image: none;
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+    text-decoration: none;
+}
+
+#content-wrapper #sections .hasDatepicker .ui-widget-content .ui-widget-header a.ui-state-hover .ui-icon,
+.modal-content .hasDatepicker .ui-widget-content .ui-widget-header a.ui-state-hover .ui-icon {
+    color: #FFFFFF;
+}
+
+.hasDatepicker .ui-widget-header a:hover,
+.hasDatepicker .ui-widget-header a:focus,
+.hasDatepicker .ui-widget-header a:active {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+#content-wrapper #sections .hasDatepicker .ui-widget-content a.ui-state-default,
+.modal-content .hasDatepicker .ui-widget-content a.ui-state-default {
+    border:none;
+    background-image: none;
+    background-color: transparent;
+    color: #8B8F96;
+}
+
+#content-wrapper #sections .hasDatepicker .ui-widget-content a.ui-state-hover,
+.modal-content .hasDatepicker .ui-widget-content a.ui-state-hover {
+    background-color: #EDF1F1;
+    background-image: none;
+    color: #8B8F96;
+    font-weight: inherit;
+}
+
+/* "td" gives precedence over ui-state-hover */
+#content-wrapper #sections .hasDatepicker .ui-widget-content td a.ui-state-active,
+.modal-content .hasDatepicker .ui-widget-content td a.ui-state-active {
+    background-color: #EDF1F1;
+    box-shadow: 0 0 0 3px #6599cb;
+}
+
+#content-wrapper #sections .hasDatepicker .ui-widget-content td.has_event a.ui-state-default,
+.modal-content .hasDatepicker .ui-widget-content td.has_event a.ui-state-default {
+    background-color: #617286;
+    color: #FFFFFF;
+}
+
+#content-wrapper #sections .hasDatepicker .ui-widget-content .ui-state-disabled span.ui-state-default,
+.modal-content .hasDatepicker .ui-widget-content .ui-state-disabled span.ui-state-default {
+    border:none;
+    background-image: none;
+    background-color: transparent;
+    color: #8B8F96;
+    text-align: center;
+}
+
+.hasDatepicker .ui-widget-content tbody td a {
+    text-align: center;
+}
+
+.hasDatepicker .ui-datepicker-calendar {
+    width: 94%;
+    margin: 0 auto;
+}
+
+.hasDatepicker .ui-datepicker th {
+    padding-top: 40px;
+    color: #8B8F96;
+}
+
+.hasDatepicker .ui-datepicker td {
+    padding-top: 30px;
+}
+
+.hasDatepicker .ui-datepicker td a {
+    border-radius: 15px;
+    width: 27px;
+    margin: 0 auto;
+    padding: 6px 0 6px 1px;
+    text-align: center;
+}
+
+.hasDatepicker .calendar_details {
+    background-color: #ECF0F1;
+    padding: 30px;
+}
+
+.hasDatepicker .ui-corner-all {
+    border-radius: 0;
+}
+
+#content-wrapper #sections .hasDatepicker .ui-widget-content td.ui-datepicker-today a.ui-state-default,
+.modal-content .hasDatepicker .ui-widget-content td.ui-datepicker-today a.ui-state-default {
+    color: #6599cb;
+}
+
+#content-wrapper #sections .hasDatepicker .calendar_details .calendar_icon {
+    width: 60px;
+    height: 60px;
+    float: left;
+    text-align: center;
+    line-height: 77px;
+    background-image: url('/static/images/calendar_icon.png');
+    font-size: 18px;
+    margin-right: 20px;
+}
+
+#content-wrapper #sections .hasDatepicker .calendar_details p {
+    margin-bottom: 0;
+    line-height: 1.4em;
+}
+
+#content-wrapper #sections .hasDatepicker .calendar_details p.time_block {
+    color: #617286;
+    text-transform: uppercase;
+}
+
+#content-wrapper #sections .hasDatepicker .calendar_details p.event_details {
+    font-size: 14px;
+    font-style: italic;
+}
+
+#content-wrapper #sections .hasDatepicker .calendar_details .calendar_detail_row {
+    margin: 0 0 20px 80px;
+}
+
+
+#content-wrapper #sections .hasDatepicker .calendar_details .calendar_detail_row:last-child {
+    margin-bottom: 0;
+}
+
+#content-wrapper #sections .hasDatepicker .calendar_details h3 a {
+    color: #8B8F96;
+}
+
+#content-wrapper #sections .hasDatepicker .calendar_details h3 a:hover {
+    color: #97BEE4;
+}
+
+/*========== END CALENDAR ==========*/
