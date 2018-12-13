@@ -1,0 +1,22 @@
+{% load front_tags %}
+
+<div class="text-center modal_related_services_container">
+{% front_edit 'modal-related-services' page.id %}
+
+    <h2>Any more reservations needed?</h2>
+
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+        labore et dolore magna aliqua.
+    </p>
+
+{% end_front_edit %}
+</div>
+
+<form id="related_services_form" class="form-horizontal" action="#" method="post">
+
+    {% csrf_token %}
+
+    {{ related_services_form }}
+
+</form>

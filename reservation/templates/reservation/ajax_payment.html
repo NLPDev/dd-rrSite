@@ -1,0 +1,38 @@
+<form id="payments_form" class="form-horizontal" action="#" method="post">
+
+    {% csrf_token %}
+
+    <div class="col-md-12 amount_due"><span>Amount Due:</span> ${{ amount }}</div>
+
+    {{ payments_form.non_field_errors }}
+
+    <div class="col-md-12">
+        {{ payments_form.name_on_card.errors }}
+        {{ payments_form.name_on_card.label_tag }}
+        {{ payments_form.name_on_card }}
+    </div>
+    <div class="col-md-12">
+        {{ payments_form.card_number.errors }}
+        {{ payments_form.card_number.label_tag }}
+        {{ payments_form.card_number }}
+    </div>
+
+    <div class="col-xs-12 col-sm-12 col-md-6">
+        {{ payments_form.card_type.errors }}
+        {{ payments_form.card_type.label_tag }}
+        {{ payments_form.card_type }}
+    </div>
+
+    <div class="col-xs-12 col-sm-12 col-md-6">
+        {{ payments_form.security_code.errors }}
+        {{ payments_form.security_code.label_tag }}
+        {{ payments_form.security_code }}
+    </div>
+
+    <div class="col-md-12">
+        {{ payments_form.exp_date.errors }}
+        {{ payments_form.exp_date.label_tag }}
+        <div class="exp_date_container">{{ payments_form.exp_date }}</div>
+    </div>
+
+</form>

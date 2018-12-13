@@ -1,0 +1,19 @@
+<h2>{{ success_content.title }}</h2>
+
+{% for event in events %}
+    <div class="success_details">
+        <div class="month">{{ event.start_time | date:'F' }}</div>
+        <div class="calendar_icon">{{ event.start_time | date:'j' }}</div>
+        <div class="inner_details">
+            <div class="title">{{ event.service.title }}</div>
+            <div class="time_block">{{ event.start_time | date:'f a' }} - {{ event.end_time | date:'f a' }}</div>
+        </div>
+        <div class="clear-both"></div>
+    </div>
+{% endfor %}
+
+<p>{{ success_content.message }}</p>
+
+{% if transaction %}
+    <div class="order_total_container"><span>Order Total:</span> ${{ transaction.amount }}</div>
+{% endif %}

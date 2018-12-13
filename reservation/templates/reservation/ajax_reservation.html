@@ -1,0 +1,31 @@
+<form id="reservation_form" class="form-horizontal" action="#" method="post">
+
+    {% csrf_token %}
+
+    <input type="hidden" id="services_str" name="services_str" value="{% for service_id in reservation_form.services %}{{ service_id }},{% endfor %}" />
+
+    {{ reservation_form.non_field_errors }}
+
+    <div class="col-md-12">
+        <label>Choose date</label>
+        <div datepicker></div>
+    </div>
+
+    <div class="refresh_start_time col-xs-12 col-sm-12 col-md-6">
+        {{ reservation_form.start_time.errors }}
+        {{ reservation_form.start_time.label_tag }}
+        {{ reservation_form.start_time }}
+    </div>
+    <div class="refresh_end_time col-xs-12 col-sm-12 col-md-6">
+        {{ reservation_form.end_time.errors }}
+        {{ reservation_form.end_time.label_tag }}
+        {{ reservation_form.end_time }}
+    </div>
+
+    <div class="col-md-12">
+        {{ reservation_form.event_description.errors }}
+        {{ reservation_form.event_description.label_tag }}
+        {{ reservation_form.event_description }}
+    </div>
+
+</form>

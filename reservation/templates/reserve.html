@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    {% for service in services %}
+    <div>
+        <div>
+            <h1>{{ service.title }}</h1>
+            <h4>{{ service.description }}</h4>
+            <p>{{ service.fee }}</p>
+            <p>Opens: {{ service.open }} Closes: {{ service.close }}</p>
+        </div>
+        <form action="{% url 'reservation' %}" method="post">
+            {% csrf_token %}
+            <input id="id_service" name="service" value="{{ service.id }}" hidden>
+            <label for="id_start_time">{{ reserveForm.errors.start_time }}</label>
+            <p>{{ reserveForm.start_time }}</p>
+            <label for="id_end_time">{{ reserveForm.errors.end_time }}</label>
+            <p>{{ reserveForm.end_time }}</p>
+            <input id="id_neighbor" hidden name="neighbor" value="{{ neighbor }}">
+            <button><input type="submit">Book Now</button>
+        </form>
+    </div>
+    {% endfor %}
+</body>
+</html>

@@ -1,0 +1,11 @@
+<h2>{{ date_formatted_long }}</h2>
+
+<div class="calendar_icon">{{ date.day }}</div>
+
+{% for item in items %}
+    <div class="calendar_detail_row">
+        <h3>{{ item.service }}</h3>
+        <p class="time_block">{{ item.start_time | date:'f a' }} - {{ item.end_time | date:'f a' }}</p>
+        <p class="event_details">Reserved</p>
+    </div>
+{% endfor %}

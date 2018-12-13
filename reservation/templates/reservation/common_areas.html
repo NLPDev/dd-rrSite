@@ -1,0 +1,74 @@
+{% extends 'detail_pages/2_col.html' %}
+{% load front_tags %}
+{% load staticfiles %}
+{% load humanize %}
+
+{% block extra-head %}
+    {{ block.super }}
+    <link type="text/css" rel="stylesheet" href="{% static "reservation/css/reservation.css" %}">
+{% endblock %}
+
+{% block body-id %}ng-app="realclear" id="ng-app"{% endblock %}
+
+{% block detail-content-left %}
+
+    <div ng-controller="CommonAreaScheduleCtrl">
+        <div calendar></div>
+    </div>
+
+{% endblock %}
+
+{% block detail-content-right %}
+
+    {% front_edit 'right-section-copy' page.id %}
+
+        <h1>Common Areas</h1>
+
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+            voluptate velit esse cillum dolore eu fugiat
+        </p>
+
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+            voluptate velit esse cillum dolore eu fugiat
+        </p>
+
+    {% end_front_edit %}
+
+    <div id="common_areas_container" ng-controller="ReservationCtrl">
+
+        {% for area in common_areas %}
+            <div class="common_areas_row">
+                <h2>{{ area.title }}</h2>
+
+                {% if area.fee > 0 %}
+                    <p class="price">${{ area.fee | floatformat:"2" | intcomma }}</p>
+                {% else %}
+                    <p class="price">No reservation fee</p>
+                {% endif %}
+
+                {% if area.open or area.close %}
+                    <p class="hours">
+                    {% if area.open and area.close %}
+                        {{ area.open }} - {{ area.close }}
+                    {% elif area.open %}
+                        Opens at {{ area.open }}
+                    {% elif area.close %}
+                        Closes at {{ area.close }}
+                    {% endif %}
+                    </p>
+                {% endif %}
+
+                <a id="reserve_btn_{{ area.id }}" class="btn info" ng-click="open({{ area.id }})">Reserve</a>
+
+            </div>
+        {% endfor %}
+
+    </div>
+
+{% endblock %}

@@ -1,0 +1,146 @@
+
+#content-wrapper #sections #common_areas_container {
+    margin-top: 70px;
+}
+
+#common_areas_container .btn {
+    float: right;
+}
+
+#common_areas_container .common_areas_row {
+    clear: both;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+#content-wrapper #sections #common_areas_container h2 {
+    margin: 0;
+}
+
+#content-wrapper #sections #common_areas_container p.price,
+#content-wrapper #sections #common_areas_container p.hours {
+    font-style: italic;
+    color: #97BEE4;
+    margin: 0;
+    font-size: 14px;
+}
+
+#common_areas_container .common_areas_row a.btn {
+    position: absolute;
+    right: 14px;
+    top: 0;
+}
+
+/*==
+RESPONSIVENESS
+==*/
+@media (max-width: 991px) {
+    #common_areas_container .common_areas_row a.btn {
+        display: block;
+        position: relative;
+        width: 97%;
+        margin-bottom: 40px;
+        margin-top: 10px;
+    }
+}
+/*==
+END RESPONSIVENESS
+==*/
+
+/* RELATED SERVICES - MODAL STEP 1 */
+
+.modal #related_services_form {
+    padding-top: 20px;
+}
+
+.modal #related_services_form label {
+    font-size: 20px;
+    line-height: 1.4em;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #7E9DBD;
+    cursor: pointer;
+    /* prevent annoying highlighting */
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.modal #related_services_form label.price {
+    font-family: 'Merriweather', Georgia, serif;
+    font-style: italic;
+    color: #97BEE4;
+    font-size: 14px;
+    text-transform: none;
+    line-height: 1.8em;
+    font-weight: 400;
+    display: block;
+    margin-left: 40px;
+    cursor: auto;
+}
+
+.modal #related_services_form input[type=checkbox] {
+    display:none;
+}
+
+.modal #related_services_form .checkbox_icon {
+    width: 27px;
+    height: 27px;
+    margin-right: 10px;
+    background-color: transparent;
+    display: inline-block;
+    border: 3px solid #7E9DBD;
+    float: left;
+    position: relative;
+    top: 6px;
+    border-radius: 2px;
+}
+
+.modal #related_services_form input[type=checkbox]:checked + .checkbox_icon {
+    /* border-color: red; */
+}
+
+.modal #related_services_form input[type=checkbox]:checked + .checkbox_icon:before {
+    content: '\00d7'; /* equivalent to &times; */
+    font-size: 27px;
+    position: relative;
+    top: 2px;
+    left: 3px;
+    font-weight: 400;
+    font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+}
+
+/* RESERVATION FORM - MODAL STEP 2 */
+
+
+/* PAYMENT FORM - MODAL STEP 3 */
+.modal #payments_form .amount_due {
+    margin-bottom: 26px;
+}
+
+.modal #payments_form .amount_due span {
+    color: #7E9DBD;
+    text-transform: uppercase;
+}
+
+.modal #payments_form .exp_date_container .expirydatefield:first-child {
+    padding-left: 0;
+}
+
+.modal #payments_form .exp_date_container .expirydatefield:last-child {
+    padding-right: 0;
+}
+
+/* SUCCESS - MODAL STEP 4 */
+.modal .modal-content .order_total_container {
+    margin-top: 20px;
+}
+
+.modal .modal-content .order_total_container span {
+    color: #7E9DBD;
+    text-transform: uppercase;
+    font-weight: 700;
+}
